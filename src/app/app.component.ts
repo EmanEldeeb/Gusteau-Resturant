@@ -11,12 +11,16 @@ import { CartComponent } from '../components/cart/cart.component';
 import { ContactusComponent } from '../components/contactus/contactus.component';
 import { MenuComponent } from '../components/menu/menu.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
+import { NavbarComponent } from '../components/navbar/navbar.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    NavbarComponent,
+    FooterComponent,
     LoginComponent,
     RegisterComponent,
     HomeComponent,
