@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+$main-background: #0b1315;
+$identity-color: #c9ab81;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+::placeholder {
+  color: $identity-color;
+  opacity: 30%;
+}
+
+.text-identity {
+  color: #c9ab81;
+}
+.main-btn {
+  background-color: transparent;
+  color: $identity-color;
+  border: 1px solid $identity-color;
+  border-radius: 15px;
+  padding: 10px 15px;
+  &:hover {
+    box-shadow: 1px 1px 7px 2px $identity-color;
+  }
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// problem
+.auth-container {
+  min-height: 900px;
+  background-color: $main-background;
+  img {
+    height: 100% !important;
+  }
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid $identity-color;
+  padding: 10px;
+  background-color: transparent !important;
+  margin-top: 5px;
+  color: $identity-color;
+  &:focus {
+    box-shadow: 1px 1px 7px 2px $identity-color;
+    outline: none;
+    background-color: transparent !important;
+  }
+}
+.form-c {
+  width: 100%;
+}
+
+input:-webkit-autofill {
+  -webkit-transition-delay: 9999s;
+  transition-delay: 9999s;
+}

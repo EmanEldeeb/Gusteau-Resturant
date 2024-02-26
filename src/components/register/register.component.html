@@ -1,1 +1,185 @@
-<p>register works!</p>
+<section class="row g-0 auth-container">
+  <!-- problem -->
+  <div class="col-md-6 d-none d-md-block h-100 position-relative bg-info">
+    <img
+      src="./assets/images/loginhero.png"
+      alt="loginhero"
+      class="w-100 h-100 position-absolute start-0 top-0"
+    />
+    <img
+      src="../../assets/images/loginopcity.png"
+      alt="opcity"
+      class="w-100 h-100 position-absolute start-0 top-0"
+    />
+  </div>
+  <div class="col-md-6 position-relative">
+    <img
+      src="../../assets/images/loginpattern.png"
+      alt="opcity"
+      class="w-100 h-100 position-absolute start-0 top-0 z-0"
+    />
+    <div class="form-container center flex-column h-100 text-identity py-5">
+      <h1>Welcome</h1>
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="sentUserDataToServer()"
+        class="center h-100 flex-column z-1 gap-3 px-3"
+      >
+        <div class="form-c">
+          <label for="name">UserName:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            formControlName="name"
+            class="form-input"
+            placeholder="Enter your Name"
+          />
+
+          @if((registerForm.get("name")?.touched||registerForm.get("name")?.value.length>0)&&registerForm.get("name")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(registerForm.get("name")?.getError("required")){
+            <div>Name is required</div>
+            } @else if(registerForm.get("name")?.getError("minlength")){
+            <div>Name must be > 3 char</div>
+            } @else if(registerForm.get("name")?.getError("maxlength")){
+            <div>Name must be < 10 char</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            class="form-input"
+            placeholder="Enter your Email"
+          />
+          @if((registerForm.get("email")?.touched||registerForm.get("email")?.value.length>0)&&registerForm.get("email")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(registerForm.get("email")?.getError("required")){
+            <div>Email is required</div>
+            } @else if(registerForm.get("email")?.getError("pattern")){
+            <div>Please write vaild mail format:eman&#64;gmail.com</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            class="form-input"
+            placeholder="Enter your Password"
+          />
+          @if((registerForm.get("password")?.touched||registerForm.get("password")?.value.length>0)&&registerForm.get("password")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(registerForm.get("password")?.getError("required")){
+            <div>Password is required</div>
+            } @else if(registerForm.get("password")?.getError("pattern")){
+            <div>Password must contain at least 6 chars</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="rePassword">Repassword:</label>
+          <input
+            type="password"
+            name="rePassword"
+            id="rePassword"
+            formControlName="rePassword"
+            class="form-input"
+            placeholder="Confirm your Password"
+          />
+          @if((registerForm.get("rePassword")?.touched||registerForm.get("rePassword")?.value.length>0)&&registerForm.get("rePassword")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(registerForm.get("rePassword")?.getError("required")){
+            <div>REPassword is required</div>
+            } @else if(registerForm.get("rePassword")?.getError("pattern")){
+            <div>REPassword must contain at least 6 chars</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="phone">Phone:</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            formControlName="phone"
+            class="form-input"
+            placeholder="Enter your Phone"
+          />
+          @if((registerForm.get("phone")?.touched||registerForm.get("phone")?.value.length>0)&&registerForm.get("phone")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(registerForm.get("phone")?.getError("required")){
+            <div>Phone is required</div>
+            } @else if(registerForm.get("phone")?.getError("pattern")){
+            <div>Phone must contain at least 6 chars</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="from-actions text-center">
+          <button type="submit" class="main-btn px-5 py-2">
+            Create Account @if(loading){<span
+              ><i class="fa-solid fa-utensils fa-beat-fade"></i></span
+            >}
+          </button>
+          @if(registerError){
+          <div class="alert alert-danger mt-3">
+            @if(errorMessage=='fail'){
+            <div>password confirmation is not correct</div>
+            } @else{
+            <div>
+              Account Already Exists try to
+              <span
+                routerLink="/login"
+                class="text-identity font-weight-bold h5"
+                role="button"
+                >login</span
+              >
+            </div>
+            }
+          </div>
+          }
+        </div>
+        <div class="auth-options">
+          <div class="accout-exists text-white mt-2 text-center text-md-start">
+            Already have a account?
+            <span class="text-identity" routerLink="/login" role="button"
+              >Log in</span
+            >
+          </div>
+          <div class="auth-methods center flex-column gap-2 mt-3">
+            <p>- OR -</p>
+            <div class="center gap-3 flex-wrap justify-content-lg-between">
+              <button class="main-btn" type="button ">
+                <img
+                  src="./assets/images/google-alt-svgrepo-com 1.png"
+                  alt="Google"
+                />
+                Sing up with Google
+              </button>
+              <button class="main-btn" type="button">
+                <img
+                  src="./assets/images/facebook-svgrepo-com 1.png"
+                  alt="facebook"
+                />
+                Sing up with facebook
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

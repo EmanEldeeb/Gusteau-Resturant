@@ -1,1 +1,129 @@
-<p>login works!</p>
+<section class="row g-0 auth-container">
+  <!-- problem -->
+  <div class="col-md-6 d-none d-md-flex h-100 position-relative">
+    <img
+      src="./assets/images/loginhero.png"
+      alt="loginhero"
+      class="w-100 h-100 position-absolute start-0 top-0"
+    />
+    <img
+      src="../../assets/images/loginopcity.png"
+      alt="opcity"
+      class="w-100 h-100 position-absolute start-0 top-0"
+    />
+  </div>
+  <div class="col-md-6 position-relative">
+    <img
+      src="../../assets/images/loginpattern.png"
+      alt="opcity"
+      class="w-100 h-100 position-absolute start-0 top-0 z-0"
+    />
+    <div class="form-container center flex-column h-100 text-identity py-5">
+      <form
+        [formGroup]="LoginForm"
+        (ngSubmit)="sentUserDataToServer()"
+        class="center h-100 flex-column z-1 gap-3 px-3"
+      >
+        <h1 class="mb-3">Welcome</h1>
+
+        <div class="form-c">
+          <label for="name">UserName:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            formControlName="name"
+            class="form-input"
+            placeholder="Enter your Name"
+          />
+
+          @if((LoginForm.get("name")?.touched||LoginForm.get("name")?.value.length>0)&&LoginForm.get("name")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(LoginForm.get("name")?.getError("required")){
+            <div>Name is required</div>
+            } @else if(LoginForm.get("name")?.getError("minlength")){
+            <div>Name must be > 3 char</div>
+            } @else if(LoginForm.get("name")?.getError("maxlength")){
+            <div>Name must be < 10 char</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            formControlName="email"
+            class="form-input"
+            placeholder="Enter your Email"
+          />
+          @if((LoginForm.get("email")?.touched||LoginForm.get("email")?.value.length>0)&&LoginForm.get("email")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(LoginForm.get("email")?.getError("required")){
+            <div>Email is required</div>
+            } @else if(LoginForm.get("email")?.getError("pattern")){
+            <div>Please write vaild mail format:eman&#64;gmail.com</div>
+            }
+          </div>
+          }
+        </div>
+        <div class="form-c">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            formControlName="password"
+            class="form-input"
+            placeholder="Enter your Password"
+          />
+          @if((LoginForm.get("password")?.touched||LoginForm.get("password")?.value.length>0)&&LoginForm.get("password")?.errors){
+          <div class="alert alert-danger mt-2 mb-0">
+            @if(LoginForm.get("password")?.getError("required")){
+            <div>Password is required</div>
+            } @else if(LoginForm.get("password")?.getError("pattern")){
+            <div>Password must contain at least 6 chars</div>
+            }
+          </div>
+          }
+        </div>
+
+        <div class="from-actions text-center">
+          <button type="submit" class="main-btn px-5 py-2">
+            Enter @if(loading){
+            <span> <i class="fa-solid fa-utensils fa-beat-fade"></i></span>
+            }
+          </button>
+          @if(loginerror){
+          <div class="alert alert-danger mt-2">
+            Unauthorized Please check you mail and password again
+          </div>
+          }
+        </div>
+        <div class="auth-options">
+          <div class="auth-methods center flex-column gap-2 mt-3">
+            <p>- OR -</p>
+            <div class="center gap-3 flex-wrap justify-content-lg-between">
+              <button class="main-btn" type="button " id="google-btn">
+                <img
+                  src="./assets/images/google-alt-svgrepo-com 1.png"
+                  alt="Google"
+                />
+                Sing up with Google
+              </button>
+              <button class="main-btn" type="button">
+                <img
+                  src="./assets/images/facebook-svgrepo-com 1.png"
+                  alt="facebook"
+                />
+                Sing up with facebook
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -13,12 +13,14 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    HttpClientModule,
     NavbarComponent,
     FooterComponent,
     LoginComponent,
