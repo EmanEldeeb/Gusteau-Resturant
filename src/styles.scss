@@ -28,7 +28,7 @@ $identity-color: #c9ab81;
   color: $identity-color;
   border: 1px solid $identity-color;
   border-radius: 15px;
-  padding: 10px 15px;
+  padding: 8px 15px;
   &:hover {
     box-shadow: 1px 1px 7px 2px $identity-color;
   }
@@ -40,11 +40,14 @@ $identity-color: #c9ab81;
 }
 // problem
 .auth-container {
-  min-height: 900px;
+  min-height: calc(100vh - 40px);
   background-color: $main-background;
-  img {
-    height: 100% !important;
-  }
+}
+.hero-img {
+  height: calc(70vh);
+}
+.alert {
+  --bs-alert-padding-y: 0.4rem;
 }
 
 .form-input {

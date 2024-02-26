@@ -15,7 +15,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
   { path: 'register', component: RegisterComponent, title: 'Register' },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, title: 'Home' },
+  { path: 'home', component: HomeComponent, title: 'Gusteau' },
   { path: 'menu', component: MenuComponent, title: 'Menu' },
   { path: 'aboutus', component: AboutUsComponent, title: 'About us' },
   { path: 'categories', component: CategoriesComponent, title: 'Categories' },

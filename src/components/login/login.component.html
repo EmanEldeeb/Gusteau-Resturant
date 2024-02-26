@@ -4,12 +4,12 @@
     <img
       src="./assets/images/loginhero.png"
       alt="loginhero"
-      class="w-100 h-100 position-absolute start-0 top-0"
+      class="w-100 hero-img position-absolute start-0 top-0"
     />
     <img
       src="../../assets/images/loginopcity.png"
       alt="opcity"
-      class="w-100 h-100 position-absolute start-0 top-0"
+      class="w-100 hero-img position-absolute start-0 top-0"
     />
   </div>
   <div class="col-md-6 position-relative">
@@ -38,7 +38,7 @@
           />
 
           @if((LoginForm.get("name")?.touched||LoginForm.get("name")?.value.length>0)&&LoginForm.get("name")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-2 mb-0">
             @if(LoginForm.get("name")?.getError("required")){
             <div>Name is required</div>
             } @else if(LoginForm.get("name")?.getError("minlength")){
@@ -60,7 +60,7 @@
             placeholder="Enter your Email"
           />
           @if((LoginForm.get("email")?.touched||LoginForm.get("email")?.value.length>0)&&LoginForm.get("email")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-2 mb-0">
             @if(LoginForm.get("email")?.getError("required")){
             <div>Email is required</div>
             } @else if(LoginForm.get("email")?.getError("pattern")){
@@ -80,7 +80,7 @@
             placeholder="Enter your Password"
           />
           @if((LoginForm.get("password")?.touched||LoginForm.get("password")?.value.length>0)&&LoginForm.get("password")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-2 mb-0">
             @if(LoginForm.get("password")?.getError("required")){
             <div>Password is required</div>
             } @else if(LoginForm.get("password")?.getError("pattern")){
@@ -97,10 +97,17 @@
             }
           </button>
           @if(loginerror){
-          <div class="alert alert-danger mt-2">
+          <div class="text-danger ms-3 mt-2">
             Unauthorized Please check you mail and password again
           </div>
           }
+          <br />
+          <span
+            class="identity-text px-5 py2 text-decoration-underline mt-3"
+            role="button"
+            routerLink="/register"
+            >Register</span
+          >
         </div>
         <div class="auth-options">
           <div class="auth-methods center flex-column gap-2 mt-3">

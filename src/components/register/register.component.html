@@ -1,15 +1,15 @@
 <section class="row g-0 auth-container">
   <!-- problem -->
-  <div class="col-md-6 d-none d-md-block h-100 position-relative bg-info">
+  <div class="col-md-6 d-none d-md-block h-100 position-relative">
     <img
       src="./assets/images/loginhero.png"
       alt="loginhero"
-      class="w-100 h-100 position-absolute start-0 top-0"
+      class="w-100 position-absolute start-0 top-0 hero-img"
     />
     <img
       src="../../assets/images/loginopcity.png"
       alt="opcity"
-      class="w-100 h-100 position-absolute start-0 top-0"
+      class="w-100 position-absolute start-0 top-0 hero-img"
     />
   </div>
   <div class="col-md-6 position-relative">
@@ -37,7 +37,7 @@
           />
 
           @if((registerForm.get("name")?.touched||registerForm.get("name")?.value.length>0)&&registerForm.get("name")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-1 mb-0">
             @if(registerForm.get("name")?.getError("required")){
             <div>Name is required</div>
             } @else if(registerForm.get("name")?.getError("minlength")){
@@ -59,7 +59,7 @@
             placeholder="Enter your Email"
           />
           @if((registerForm.get("email")?.touched||registerForm.get("email")?.value.length>0)&&registerForm.get("email")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-1 mb-0">
             @if(registerForm.get("email")?.getError("required")){
             <div>Email is required</div>
             } @else if(registerForm.get("email")?.getError("pattern")){
@@ -79,7 +79,7 @@
             placeholder="Enter your Password"
           />
           @if((registerForm.get("password")?.touched||registerForm.get("password")?.value.length>0)&&registerForm.get("password")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-1 mb-0">
             @if(registerForm.get("password")?.getError("required")){
             <div>Password is required</div>
             } @else if(registerForm.get("password")?.getError("pattern")){
@@ -99,7 +99,7 @@
             placeholder="Confirm your Password"
           />
           @if((registerForm.get("rePassword")?.touched||registerForm.get("rePassword")?.value.length>0)&&registerForm.get("rePassword")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-1 mb-0">
             @if(registerForm.get("rePassword")?.getError("required")){
             <div>REPassword is required</div>
             } @else if(registerForm.get("rePassword")?.getError("pattern")){
@@ -119,7 +119,7 @@
             placeholder="Enter your Phone"
           />
           @if((registerForm.get("phone")?.touched||registerForm.get("phone")?.value.length>0)&&registerForm.get("phone")?.errors){
-          <div class="alert alert-danger mt-2 mb-0">
+          <div class="text-danger ms-3 mt-2 mb-0">
             @if(registerForm.get("phone")?.getError("required")){
             <div>Phone is required</div>
             } @else if(registerForm.get("phone")?.getError("pattern")){
@@ -159,9 +159,9 @@
               >Log in</span
             >
           </div>
-          <div class="auth-methods center flex-column gap-2 mt-3">
+          <div class="auth-methods center flex-column gap-2 mt-2">
             <p>- OR -</p>
-            <div class="center gap-3 flex-wrap justify-content-lg-between">
+            <div class="center gap-2 flex-wrap justify-content-lg-between">
               <button class="main-btn" type="button ">
                 <img
                   src="./assets/images/google-alt-svgrepo-com 1.png"
