@@ -10,6 +10,7 @@ import { ProductListComponent } from '../components/product-list/product-list.co
 import { ProductDetailsComponent } from '../components/product-details/product-details.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { CartComponent } from '../components/cart/cart.component';
+import { authGuard } from '../guard/auth.guard';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
@@ -30,7 +31,12 @@ export const routes: Routes = [
     component: ProductDetailsComponent,
     title: 'Product Details',
   },
-  { path: 'cart', component: CartComponent, title: 'Cart' },
+  {
+    path: 'cart',
+    component: CartComponent,
+    title: 'Cart',
+    canActivate: [authGuard],
+  },
   { path: 'contact', component: ContactusComponent, title: 'Get In Touch' },
   { path: '**', component: NotfoundComponent, title: 'Not Found :|' },
 ];
