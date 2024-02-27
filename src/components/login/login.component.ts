@@ -1,4 +1,4 @@
-declare var google: any;
+// declare var google: any;
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -9,30 +9,48 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { GoogleloginComponent } from '../googlelogin/googlelogin.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    GoogleloginComponent,
+  ],
   providers: [AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loading: boolean = false;
   loginerror: boolean = false;
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   //#########################
-  ngOnInit(): void {
-    google.accounts.id.initialize({
-      client_id: 'YOUR_GOOGLE_CLIENT_ID',
-      callback: (reponse: any) => {},
-    });
-    google.accounts.id.renderButton(document.getElementById('google-btn'), {
-      size: 'large',
-      theme: 'outline',
-    });
-  }
+  // ngOnInit(): void {
+  //   // 148688952528-vgrcn5eg1gtpfh8ki33mmg7m1t94iush.apps.googleusercontent.com
+  //   google.accounts.id.initialize({
+  //     client_id:
+  //       '148688952528-vgrcn5eg1gtpfh8ki33mmg7m1t94iush.apps.googleusercontent.com',
+  //     callback: (reponse: any) => this.handlelogin(reponse),
+  //   });
+  //   google.accounts.id.renderButton(document.getElementById('google-btn'), {
+  //     size: 'large',
+  //     theme: 'outline',
+  //   });
+  // }
+  // private decodeToken(token: string) {
+  //   return JSON.parse(atob(token.split('.')[1]));
+  // }
+  // handlelogin(response: any) {
+  //   if (response) {
+  //     const payload = this.decodeToken(response.credential);
+  //     localStorage.setItem('_token', response.credential);
+  //     this._Router.navigate(['/home']);
+  //   }
+  // }
   // ############################
   LoginForm: FormGroup = new FormGroup({
     name: new FormControl('', [

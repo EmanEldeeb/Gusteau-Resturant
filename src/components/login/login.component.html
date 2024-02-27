@@ -22,7 +22,7 @@
       <form
         [formGroup]="LoginForm"
         (ngSubmit)="sentUserDataToServer()"
-        class="center h-100 flex-column z-1 gap-3 px-3"
+        class="center h-100 flex-column z-1 gap-3 px-3 w-75"
       >
         <h1 class="mb-3">Welcome</h1>
 
@@ -112,7 +112,7 @@
         <div class="auth-options">
           <div class="auth-methods center flex-column gap-2 mt-3">
             <p>- OR -</p>
-            <div class="center gap-3 flex-wrap justify-content-lg-between">
+            <!-- <div class="center gap-3 flex-wrap justify-content-lg-between">
               <button class="main-btn" type="button " id="google-btn">
                 <img
                   src="./assets/images/google-alt-svgrepo-com 1.png"
@@ -127,7 +127,8 @@
                 />
                 Sing up with facebook
               </button>
-            </div>
+            </div> -->
+            <app-googlelogin></app-googlelogin>
           </div>
         </div>
       </form>

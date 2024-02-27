@@ -8,11 +8,17 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
+import { GoogleloginComponent } from '../googlelogin/googlelogin.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    RouterModule,
+    GoogleloginComponent,
+  ],
   providers: [AuthService],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
