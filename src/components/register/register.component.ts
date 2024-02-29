@@ -9,6 +9,11 @@ import {
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { GoogleloginComponent } from '../googlelogin/googlelogin.component';
+import {
+  FacebookLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule,
+} from '@abacritt/angularx-social-login';
 
 @Component({
   selector: 'app-register',
@@ -18,8 +23,26 @@ import { GoogleloginComponent } from '../googlelogin/googlelogin.component';
     CommonModule,
     RouterModule,
     GoogleloginComponent,
+    SocialLoginModule,
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('425599836554105'),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
+        },
+      } as SocialAuthServiceConfig,
+    },
+  ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })

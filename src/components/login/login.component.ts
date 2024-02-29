@@ -77,6 +77,7 @@ export class LoginComponent {
           this.loginerror = false;
           console.log(response);
           localStorage.setItem('_token', response.token);
+          this.onRegistrationSuccess();
           this._Router.navigate(['/home']);
         },
         error: (err) => {
@@ -86,5 +87,11 @@ export class LoginComponent {
         },
       });
     }
+  }
+  // subsribe to isAuthenticated to change layout of navbar after login
+  onRegistrationSuccess(): void {
+    console.log('successs');
+    // Notify the shared service that the user is authenticated
+    this._AuthService.setAuthenticationStatus(true);
   }
 }
