@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PayementComponent } from '../payement/payement.component';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PayementComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
@@ -20,7 +21,8 @@ export class CartComponent implements OnInit {
     this.cart = LSCart ? JSON.parse(LSCart) : null;
     this.cartItems = this.cart.items;
     this.cartTotalPrice = this.cart.totalPrice;
-    console.log(this.cartItems, this.cartTotalPrice);
+    console.log('ay 7aga', this.cartItems, this.cartTotalPrice);
+    console.log();
   }
   deleteFromCart(index: any) {
     const LSCart = localStorage.getItem('cart');
