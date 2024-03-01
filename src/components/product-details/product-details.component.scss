@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&family=Varela+Round&display=swap");
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+#container {
+  background-color: #0b1315;
+  color: #c9ab81;
+  min-height: 100vh;
+  padding: 60px 40px;
+  background-image: url(../../assets/images/pattern\ mealDetatails\ page.svg);
+  background-size: 400px;
+}
+#product {
+  margin-top: 40px;
+}
+#image-holder {
+  padding: 30px;
+}
+#image-detalis {
+  border: 2px solid #c9ab81;
+  max-width: 100%;
+}
+#details {
+  // margin-left: 30px;
+  padding: 20px 20px 20px 40px;
+  font-size: 18px;
+}
+h3 {
+  // margin: 80px 0 0;
+  // padding: 50px;
+}
+#ingradients {
+  padding: 20px 0;
+  max-width: 500px;
+  color: white;
+}
+#cart {
+  max-width: 400px;
+  margin-top: 20px;
+}
+#counter {
+  display: inline-block;
+  padding: 6px;
+  width: 50px;
+  background-color: transparent;
+  border: 2px solid #c9ab81;
+  color: #c9ab81;
+  box-shadow: 0px 0px 3px 1px #c9ab81;
+}
+#cartBtn {
+  display: inline-block;
+  background-color: transparent;
+  padding: 6px 10px;
+  color: #c9ab81;
+  border: 2px solid #c9ab81;
+  box-shadow: 0px 0px 3px 1px #c9ab81;
+  cursor: pointer;
+}
+span {
+  display: inline-block;
+  padding-right: 18px;
+}
+#relatedTitle {
+  margin: 100px 0 80px;
+}
+#dishes-sec {
+  padding: 30px;
+}
+#image {
+  // height: 300px;
+  max-width: 100%;
+  border: 2px solid #c9ab81;
+}
+#mealInfo {
+  padding: 20px 0;
+  margin-top: 15px;
+}
