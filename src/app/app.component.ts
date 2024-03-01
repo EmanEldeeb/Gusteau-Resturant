@@ -13,6 +13,7 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { PayementComponent } from '../components/payement/payement.component';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ import { FooterComponent } from '../components/footer/footer.component';
     ContactusComponent,
     MenuComponent,
     NotfoundComponent,
+    PayementComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
