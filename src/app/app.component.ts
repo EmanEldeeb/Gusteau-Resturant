@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from '../components/home/home.component';
 import { AboutUsComponent } from '../components/about-us/about-us.component';
@@ -14,6 +14,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from '../components/cart/cart.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +36,7 @@ import { CartComponent } from '../components/cart/cart.component';
     MenuComponent,
     NotfoundComponent,
   ],
+  providers: [AuthService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
