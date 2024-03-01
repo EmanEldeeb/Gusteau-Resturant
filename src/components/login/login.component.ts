@@ -90,7 +90,7 @@ export class LoginComponent {
   }
   // subsribe to isAuthenticated to change layout of navbar after login
   onRegistrationSuccess(): void {
-    console.log('successs');
+    console.log('successs login');
     // Notify the shared service that the user is authenticated
     this._AuthService.setAuthenticationStatus(true);
   }

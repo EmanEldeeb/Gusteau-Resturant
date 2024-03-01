@@ -12,7 +12,7 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid fa-bars-staggered"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
@@ -32,15 +32,27 @@
           <a class="nav-link" routerLink="/contact">CONTACT</a>
         </li>
       </ul>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <input type="text" name="" id="" />
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item searchList d-flex align-items-center">
+          <input
+            type="text"
+            name=""
+            id=""
+            class="form-input search"
+            placeholder=" Search..."
+          />
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cart">cart</a>
+          @if(isAuthenticated){
+          <a class="nav-link" routerLink="/cart"
+            ><i class="fa-solid fa-cart-shopping"></i></a
+          >} @else{
+          <a class="nav-link" routerLink="/login"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          }
         </li>
         <li class="nav-item">
-          {{ isAuthenticated }}
           @if(isAuthenticated){
           <a class="nav-link" (click)="signOut()">signout</a>} @else{
           <a class="nav-link" routerLink="/login">login</a>

@@ -21,12 +21,13 @@ export class AuthService {
     );
   }
   // converting register to sign out by subscribe to isAuthenticated variable
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+  static isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   isAuthenticated$: Observable<boolean> =
-    this.isAuthenticatedSubject.asObservable();
+    AuthService.isAuthenticatedSubject.asObservable();
 
   setAuthenticationStatus(isAuthenticated: boolean): void {
-    this.isAuthenticatedSubject.next(isAuthenticated);
+    console.log('service', AuthService.isAuthenticatedSubject);
+    AuthService.isAuthenticatedSubject.next(isAuthenticated);
   }
 }
