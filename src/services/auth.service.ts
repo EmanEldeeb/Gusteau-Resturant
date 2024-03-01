@@ -6,7 +6,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private _HttpClient: HttpClient) {}
+  static isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+
+  constructor(private _HttpClient: HttpClient) {
+    // Check the token state during the initialization of the service
+    AuthService.checkTokenState();
+  }
 
   postUserDataToServer(body: any): Observable<any> {
     return this._HttpClient.post(
@@ -14,14 +19,24 @@ export class AuthService {
       body
     );
   }
+
   postLoginRequest(body: any): Observable<any> {
-    return this._HttpClient.post(
+    // Make the HTTP post request
+    const loginObservable = this._HttpClient.post(
       'https://ecommerce.routemisr.com/api/v1/auth/signin',
       body
     );
+
+    // Check token state after making the request
+    AuthService.checkTokenState();
+
+    return loginObservable;
   }
-  // converting register to sign out by subscribe to isAuthenticated variable
-  static isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+
+  static checkTokenState(): void {
+    const tokenState: any = localStorage.getItem('_token');
+    AuthService.isAuthenticatedSubject.next(!!tokenState); // Set to true if token exists, otherwise false
+  }
 
   isAuthenticated$: Observable<boolean> =
     AuthService.isAuthenticatedSubject.asObservable();
