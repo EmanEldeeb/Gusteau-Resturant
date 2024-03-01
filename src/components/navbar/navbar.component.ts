@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
   signOut() {
     this.isAuthenticated = false;
     localStorage.removeItem('_token');
+    localStorage.removeItem('cart');
     this._Router.navigate(['/login']);
   }
 }

@@ -27,30 +27,12 @@ import { GoogleloginComponent } from '../googlelogin/googlelogin.component';
 export class LoginComponent {
   loading: boolean = false;
   loginerror: boolean = false;
+  // handle cart
+  cart: {} = { items: [], totalPrice: 0 };
+
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   //#########################
-  // ngOnInit(): void {
-  //   // 148688952528-vgrcn5eg1gtpfh8ki33mmg7m1t94iush.apps.googleusercontent.com
-  //   google.accounts.id.initialize({
-  //     client_id:
-  //       '148688952528-vgrcn5eg1gtpfh8ki33mmg7m1t94iush.apps.googleusercontent.com',
-  //     callback: (reponse: any) => this.handlelogin(reponse),
-  //   });
-  //   google.accounts.id.renderButton(document.getElementById('google-btn'), {
-  //     size: 'large',
-  //     theme: 'outline',
-  //   });
-  // }
-  // private decodeToken(token: string) {
-  //   return JSON.parse(atob(token.split('.')[1]));
-  // }
-  // handlelogin(response: any) {
-  //   if (response) {
-  //     const payload = this.decodeToken(response.credential);
-  //     localStorage.setItem('_token', response.credential);
-  //     this._Router.navigate(['/home']);
-  //   }
-  // }
+  ngOnInit(): void {}
   // ############################
   LoginForm: FormGroup = new FormGroup({
     name: new FormControl('', [
@@ -76,6 +58,7 @@ export class LoginComponent {
           this.loading = false;
           this.loginerror = false;
           console.log(response);
+          localStorage.setItem('cart', JSON.stringify(this.cart));
           localStorage.setItem('_token', response.token);
           this.onRegistrationSuccess();
           this._Router.navigate(['/home']);

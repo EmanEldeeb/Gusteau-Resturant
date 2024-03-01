@@ -9,8 +9,8 @@ import { RegisterComponent } from '../components/register/register.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { ProductDetailsComponent } from '../components/product-details/product-details.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
-import { CartComponent } from '../components/cart/cart.component';
 import { authGuard } from '../guard/auth.guard';
+import { CartComponent } from '../components/cart/cart.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
@@ -21,13 +21,13 @@ export const routes: Routes = [
   { path: 'aboutus', component: AboutUsComponent, title: 'About us' },
   { path: 'categories', component: CategoriesComponent, title: 'Categories' },
   {
-    path: 'productlist',
+    path: 'productlist/:name',
     component: ProductListComponent,
     title: 'Product List',
   },
   //   need to modifie title of product details depend on product name
   {
-    path: 'product/:id',
+    path: 'product/:category/:id',
     component: ProductDetailsComponent,
     title: 'Product Details',
   },

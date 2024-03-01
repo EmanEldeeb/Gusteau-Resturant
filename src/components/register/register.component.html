@@ -123,7 +123,7 @@
             @if(registerForm.get("phone")?.getError("required")){
             <div>Phone is required</div>
             } @else if(registerForm.get("phone")?.getError("pattern")){
-            <div>Phone must contain at least 6 chars</div>
+            <div>Phone must be egyption number</div>
             }
           </div>
           }

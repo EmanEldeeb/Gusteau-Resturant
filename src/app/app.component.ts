@@ -7,13 +7,13 @@ import { RegisterComponent } from '../components/register/register.component';
 import { CategoriesComponent } from '../components/categories/categories.component';
 import { ProductListComponent } from '../components/product-list/product-list.component';
 import { ProductDetailsComponent } from '../components/product-details/product-details.component';
-import { CartComponent } from '../components/cart/cart.component';
 import { ContactusComponent } from '../components/contactus/contactus.component';
 import { MenuComponent } from '../components/menu/menu.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from '../components/cart/cart.component';
 
 @Component({
   selector: 'app-root',
