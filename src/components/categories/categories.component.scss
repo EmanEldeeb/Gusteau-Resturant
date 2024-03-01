@@ -1,0 +1,70 @@
+#container {
+  /* min-height: 100vh; */
+  font-family: "DM Serif Display";
+  background-color: #0b1315;
+  font-size: 18px;
+  padding: 50px;
+  position: relative;
+  z-index: 1;
+  background-image: url("../../assets/images/Asset\ 1\ 1.svg");
+  background-size: 600px;
+}
+a {
+  cursor: pointer;
+  width: 100%;
+}
+.card {
+  background-color: transparent;
+  padding: 0;
+  margin: 50px 30px;
+  padding: 20px;
+  // background-image: linear-gradient(to top, #212024 40%, transparent 90%);
+  border: none;
+}
+#square {
+  font-weight: bold;
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 20px;
+  background-image: linear-gradient(to top, #212024 60%, transparent 90%);
+}
+.circle2 {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  margin-top: -60px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #212024 20px, #0b1315 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: transparent; */
+  // border: 8px solid;
+  // rotate: 45deg;
+  // border-color: #212024 transparent transparent #212024;
+  //   color: black;
+}
+#circle1 {
+  // width: 90px;
+  // height: 90px;
+  border-radius: 50%;
+  background-color: transparent;
+  // border: 5px solid #0b1315;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+}
+a {
+  text-decoration: none;
+  color: white;
+}

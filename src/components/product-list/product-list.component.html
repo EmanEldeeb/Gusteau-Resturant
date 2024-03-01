@@ -1,1 +1,27 @@
-<p>product-list works!</p>
+<div id="container" class="container-fluid">
+  <div class="row justify-content-center">
+    <h2>{{ categoryName }}</h2>
+    @for (meal of AllMeals; track meal.idMeal){ @if(AllMeals) {
+    <div class="card col-sm-12 col-md-3 position-relative">
+      <div id="circle1">
+        <img src="{{ meal.imageUrl }}" alt="meal Image" />
+      </div>
+      <div id="square">
+        <div id="details">
+          <div>
+            <div>
+              <a routerLink="/product/{{ categoryName }}/{{ meal.id }}">
+                {{ meal.name }}
+              </a>
+            </div>
+            <div id="price">{{ meal.price }} EGP</div>
+          </div>
+          <div id="icon-holder" (click)="getValue(meal)">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    } }
+  </div>
+</div>

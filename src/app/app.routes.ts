@@ -21,13 +21,13 @@ export const routes: Routes = [
   { path: 'aboutus', component: AboutUsComponent, title: 'About us' },
   { path: 'categories', component: CategoriesComponent, title: 'Categories' },
   {
-    path: 'productlist',
+    path: 'productlist/:name',
     component: ProductListComponent,
     title: 'Product List',
   },
   //   need to modifie title of product details depend on product name
   {
-    path: 'product/:id',
+    path: 'product/:category/:id',
     component: ProductDetailsComponent,
     title: 'Product Details',
   },
