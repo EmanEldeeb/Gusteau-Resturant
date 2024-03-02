@@ -12,6 +12,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-googlelogin',
@@ -36,14 +37,18 @@ import {
       } as SocialAuthServiceConfig,
     },
     SocialAuthService,
+    AuthService,
   ],
 })
 export class GoogleloginComponent {
   user!: SocialUser;
   loggedIn!: boolean;
+  isAuthenticated!: boolean;
+  cart: {} = { items: [], totalPrice: 0 };
   constructor(
     private _Router: Router,
-    private authService: SocialAuthService
+    private authService: SocialAuthService,
+    private _AuthService: AuthService
   ) {}
   ngOnInit(): void {
     // 148688952528-vgrcn5eg1gtpfh8ki33mmg7m1t94iush.apps.googleusercontent.com
@@ -65,6 +70,8 @@ export class GoogleloginComponent {
     if (response) {
       const payload = this.decodeToken(response.credential);
       localStorage.setItem('_token', response.credential);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
+      this.onRegistrationSuccess();
       this._Router.navigate(['/home']);
     }
     // facebook subscription
@@ -76,5 +83,10 @@ export class GoogleloginComponent {
   // facebook login
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+  }
+  onRegistrationSuccess(): void {
+    console.log('successs login');
+    // Notify the shared service that the user is authenticated
+    this._AuthService.setAuthenticationStatus(true);
   }
 }
