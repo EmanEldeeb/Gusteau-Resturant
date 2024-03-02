@@ -11,6 +11,7 @@ import { ProductDetailsComponent } from '../components/product-details/product-d
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { authGuard } from '../guard/auth.guard';
 import { CartComponent } from '../components/cart/cart.component';
+import { PayementComponent } from '../components/payement/payement.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, title: 'Login' },
@@ -37,6 +38,7 @@ export const routes: Routes = [
     title: 'Cart',
     canActivate: [authGuard],
   },
+  { path: 'payement', component: PayementComponent, title: 'Check out:)' },
   { path: 'contact', component: ContactusComponent, title: 'Get In Touch' },
   { path: '**', component: NotfoundComponent, title: 'Not Found :|' },
 ];

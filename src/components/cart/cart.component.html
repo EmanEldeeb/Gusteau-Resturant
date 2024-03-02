@@ -47,17 +47,20 @@
           <hr class="w-100 border-3" />
         </div>
         }
-        <div>price{{ cartTotalPrice | currency : "EGP" }}</div>
+        <div class="payement-details">
+          <div>price{{ cartTotalPrice | currency : "EGP" }}</div>
+          <button class="main-btn"><a href="/payement">check out</a></button>
+        </div>
       </div>
 
       }
       <!-- end of left_cart -->
       <!----------------------------------->
       <!-- start of right_paypal -->
-      <app-payement
+      <!-- <app-payement
         class="col-md-12 col-lg-5 order-md-2 right_confirm_payment"
         id="PaypalBtn"
-      ></app-payement>
+      ></app-payement> -->
       <!-- end of right_paypal -->
     </div>
   </div>

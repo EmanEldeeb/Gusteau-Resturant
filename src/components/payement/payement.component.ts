@@ -9,6 +9,7 @@ import { render } from 'creditcardpayments/creditCardPayments';
   styleUrl: './payement.component.scss',
 })
 export class PayementComponent {
+  readyToPay: boolean = false;
   constructor() {
     render({
       id: '#payPalBtn',
@@ -18,5 +19,8 @@ export class PayementComponent {
         alert('Transaction Succecful');
       },
     });
+    const paymentToken = localStorage.getItem('__paypal_storage__');
+    if (paymentToken) {
+    }
   }
 }
