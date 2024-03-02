@@ -14,9 +14,8 @@ export class PayementComponent {
     const TotalPrice = cart ? JSON.parse(cart).totalPrice : null;
     render({
       id: '#payPalBtn',
-      currency: 'THB',
-
-      value: `${TotalPrice}`,
+      currency: 'USD',
+      value: '100.00',
       onApprove: (details) => {
         alert('Transaction Succecful');
       },
