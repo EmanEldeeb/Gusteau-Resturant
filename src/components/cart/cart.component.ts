@@ -25,16 +25,39 @@ export class CartComponent implements OnInit {
     console.log('ay 7aga', this.cartItems, this.cartTotalPrice);
     console.log();
   }
-  deleteFromCart(index: any) {
-    const LSCart = localStorage.getItem('cart');
-    this.cart = LSCart ? JSON.parse(LSCart) : null;
-    this.cart.totalPrice =
-      this.cart.totalPrice -
-      this.cartItems[index].price * this.cartItems[index].quantity;
-    this.cart.items.splice(index, 1);
-    this.cartItems = this.cart.items;
-    this.cartTotalPrice = this.cart.totalPrice;
+  updateCart() {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
-  modifieProductCount(quantity: any) {}
+  deleteFromCart(index: any) {
+    this.cartItems.forEach((item: any, arrindex) => {
+      if (arrindex == index) {
+        console.log(item.quantity, 'delete');
+        this.cartTotalPrice = this.cartTotalPrice - item.price * item.quantity;
+        this.cart.totalPrice = this.cartTotalPrice;
+        this.cartItems.splice(index, 1);
+      }
+      this.updateCart();
+    });
+  }
+  changecount(idx: any, flag: number) {
+    this.cartItems.forEach((item: any, arrindex) => {
+      if (arrindex == idx) {
+        if (item.quantity == 1 && flag == -1) {
+          this.deleteFromCart(idx);
+          return;
+        }
+        if (flag == 1) {
+          item.quantity++;
+          this.cartTotalPrice = +this.cartTotalPrice + +item.price;
+          this.cart.totalPrice = this.cartTotalPrice;
+          this.updateCart();
+        } else if (flag == -1 && item.quantity != 0) {
+          item.quantity--;
+          this.cartTotalPrice = +this.cartTotalPrice - +item.price;
+          this.cart.totalPrice = this.cartTotalPrice;
+          this.updateCart();
+        }
+      }
+    });
+  }
 }
