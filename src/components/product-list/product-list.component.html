@@ -1,12 +1,10 @@
 <section>
   <div id="container" class="container-fluid">
+    <h2>{{ categoryName }}</h2>
     <div class="row justify-content-center">
       <h2>{{ categoryName }}</h2>
       @for (meal of AllMeals; track meal.idMeal){ @if(AllMeals) {
-      <div
-        class="card col-sm-12 col-md-3 position-relative"
-        routerLink="/product/{{ categoryName }}/{{ meal.id }}"
-      >
+      <div class="card col-sm-12 col-md-3 position-relative">
         <div id="circle1">
           <img src="{{ meal.imageUrl }}" alt="meal Image" />
         </div>
@@ -14,7 +12,7 @@
           <div id="details">
             <div>
               <div>
-                <a>
+                <a routerLink="/product/{{ categoryName }}/{{ meal.id }}">
                   {{ meal.name }}
                 </a>
               </div>
@@ -24,9 +22,12 @@
               <i class="fa-solid fa-cart-shopping"></i>
             </div>
           </div>
+          <div id="icon-holder" (click)="getValue(product)">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
         </div>
+        } }
       </div>
-      } }
     </div>
   </div>
 </section>
