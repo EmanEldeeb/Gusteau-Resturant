@@ -1,29 +1,96 @@
 <section>
   <div id="container" class="container-fluid">
+    <h2>{{ categoryName }}</h2>
     <div class="row justify-content-center">
-      <h2>{{ categoryName }}</h2>
-      @for (meal of AllMeals; track meal.idMeal){ @if(AllMeals) {
-      <div class="card col-sm-12 col-md-3 position-relative">
-        <div id="circle1">
-          <img src="{{ meal.imageUrl }}" alt="meal Image" />
-        </div>
-        <div id="square">
-          <div id="details">
-            <div>
-              <div>
-                <a routerLink="/product/{{ categoryName }}/{{ meal.id }}">
-                  {{ meal.name }}
-                </a>
-              </div>
-              <div id="price">{{ meal.price }} EGP</div>
-            </div>
-            <div id="icon-holder" (click)="getValue(meal)">
-              <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+      <div id="filter" class="row my-3">
+        <div
+          id="priceFilter"
+          class="d-sm-flex flex-sm-column flex-md-row justify-content-md-around"
+        >
+          <h4>Price</h4>
+          <div class="d-flex align-items-center justify-content-around">
+            <label for="min">Min</label>
+            <input
+              id="min"
+              type="range"
+              placeholder="Min Price"
+              [(ngModel)]="minPrice"
+              step="10"
+              min="0"
+              max="500"
+            />
+            <span>{{ minPrice }}</span>
           </div>
+          <div class="d-flex align-items-center justify-content-around">
+            <label for="max">Max</label>
+            <input
+              id="max"
+              type="range"
+              placeholder="Max Price"
+              [(ngModel)]="maxPrice"
+              value="maxPrice"
+              step="10"
+              min="100"
+              max="500"
+            />
+            <span>{{ maxPrice }}</span>
+          </div>
+          <button class="main-btn" (click)="applyFilter()">Apply</button>
         </div>
       </div>
-      } }
+      <div class="row">
+        @if(products.length == 0) { @for (meal of AllMeals; track meal.idMeal){
+        <div class="card col-sm-12 col-md-3 position-relative">
+          <div
+            routerLink="/product/{{ categoryName }}/{{ meal.id }}"
+            class="h-100"
+          >
+            <div id="circle1">
+              <img src="{{ meal.imageUrl }}" alt="meal Image" />
+            </div>
+            <div id="square">
+              <div id="details">
+                <div>
+                  <div>
+                    <a>
+                      {{ meal.name }}
+                    </a>
+                  </div>
+                  <div id="price">{{ meal.price }} EGP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="icon-holder" (click)="getValue(meal)">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+        } } @else { @for (product of products; track product.id){
+        <div class="card col-sm-12 col-md-3 position-relative">
+          <div
+            routerLink="/product/{{ categoryName }}/{{ product.id }}"
+            class="h-100"
+          >
+            <div id="circle1">
+              <img src="{{ product.imageUrl }}" alt="product Image" />
+            </div>
+            <div id="square">
+              <div id="details">
+                <div>
+                  <div>
+                    <a> product </a>
+                  </div>
+                  <div id="price">{{ product.price }} EGP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="icon-holder" (click)="getValue(product)">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+        } }
+      </div>
     </div>
   </div>
 </section>
