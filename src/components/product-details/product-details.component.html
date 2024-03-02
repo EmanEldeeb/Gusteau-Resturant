@@ -1,51 +1,53 @@
-<div id="container" class="container-fluid p-sm-0 p-md-5">
-  @if(mealDetails) {
-  <div class="row justify-content-center align-items-center" id="product">
-    <div id="image-holder" class="col-sm-12 col-md-4">
-      <img
-        id="image-detalis"
-        src="{{ mealDetails.imageUrl }}"
-        alt="meal image"
-      />
-    </div>
-    <div id="details" class="col-sm-12 col-md">
-      <h3>{{ mealDetails.name }}</h3>
-      <div id="price">{{ mealDetails.price }} EGP</div>
-      <div id="ingradients">
-        {{ mealDetails.ingradients }}
-      </div>
-      <div id="cart" class="d-flex justify-content-between">
-        <input
-          id="counter"
-          type="number"
-          value="1"
-          min="1"
-          [(ngModel)]="quantityValue"
+<section>
+  <div id="container" class="container-fluid p-sm-0 p-md-5">
+    @if(mealDetails) {
+    <div class="row justify-content-center align-items-center" id="product">
+      <div id="image-holder" class="col-sm-12 col-md-4">
+        <img
+          id="image-detalis"
+          src="{{ mealDetails.imageUrl }}"
+          alt="meal image"
         />
-        <!-- <button id="cartBtn" (click)="getValue(myInput.value, mealDetails)">
-          <span>ADD TO CART </span>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button> -->
-        <button id="cartBtn" (click)="addTOCart()">
-          <span>ADD TO CART </span>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+      </div>
+      <div id="details" class="col-sm-12 col-md">
+        <h3>{{ mealDetails.name }}</h3>
+        <div id="price">{{ mealDetails.price }} EGP</div>
+        <div id="ingradients">
+          {{ mealDetails.ingradients }}
+        </div>
+        <div id="cart" class="d-flex justify-content-between">
+          <input
+            id="counter"
+            type="number"
+            value="1"
+            min="1"
+            [(ngModel)]="quantityValue"
+          />
+          <!-- <button id="cartBtn" (click)="getValue(myInput.value, mealDetails)">
+            <span>ADD TO CART </span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button> -->
+          <button id="cartBtn" (click)="addTOCart()">
+            <span>ADD TO CART </span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <h2 id="relatedTitle" class="text-center">Related Dishes</h2>
-  }
-  <div class="row justify-content-between" id="dishes-sec">
-    @for(dish of relatedDishes; track relatedDishes.id) {
-    <div id="relatedDishis" class="col-sm-12 col-md-3 text-center">
-      <div>
-        <img id="image" src="{{ dish.imageUrl }}" alt="" />
-      </div>
-      <div id="mealInfo">
-        <h4>{{ dish.name }}</h4>
-        <p>{{ dish.price }} EGP</p>
-      </div>
-    </div>
+    <h2 id="relatedTitle" class="text-center">Related Dishes</h2>
     }
+    <div class="row justify-content-between" id="dishes-sec">
+      @for(dish of relatedDishes; track relatedDishes.id) {
+      <div id="relatedDishis" class="col-sm-12 col-md-3 text-center">
+        <div>
+          <img id="image" src="{{ dish.imageUrl }}" alt="" />
+        </div>
+        <div id="mealInfo">
+          <h4>{{ dish.name }}</h4>
+          <p>{{ dish.price }} EGP</p>
+        </div>
+      </div>
+      }
+    </div>
   </div>
-</div>
+</section>
