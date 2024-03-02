@@ -13,6 +13,7 @@ export class PayementComponent {
   constructor() {
     render({
       id: '#payPalBtn',
+
       currency: 'USD',
       value: '100.00',
       onApprove: (details) => {
