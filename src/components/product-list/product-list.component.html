@@ -3,7 +3,10 @@
     <div class="row justify-content-center">
       <h2>{{ categoryName }}</h2>
       @for (meal of AllMeals; track meal.idMeal){ @if(AllMeals) {
-      <div class="card col-sm-12 col-md-3 position-relative">
+      <div
+        class="card col-sm-12 col-md-3 position-relative"
+        routerLink="/product/{{ categoryName }}/{{ meal.id }}"
+      >
         <div id="circle1">
           <img src="{{ meal.imageUrl }}" alt="meal Image" />
         </div>
@@ -11,7 +14,7 @@
           <div id="details">
             <div>
               <div>
-                <a routerLink="/product/{{ categoryName }}/{{ meal.id }}">
+                <a>
                   {{ meal.name }}
                 </a>
               </div>
