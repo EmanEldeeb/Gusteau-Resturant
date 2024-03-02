@@ -9,18 +9,17 @@ import { render } from 'creditcardpayments/creditCardPayments';
   styleUrl: './payement.component.scss',
 })
 export class PayementComponent {
-  readyToPay: boolean = false;
   constructor() {
+    const cart = localStorage.getItem('cart');
+    const TotalPrice = cart ? JSON.parse(cart).totalPrice : null;
     render({
       id: '#payPalBtn',
-      currency: 'USD',
-      value: '100.00',
+      currency: 'THB',
+
+      value: `${TotalPrice}`,
       onApprove: (details) => {
         alert('Transaction Succecful');
       },
     });
-    const paymentToken = localStorage.getItem('__paypal_storage__');
-    if (paymentToken) {
-    }
   }
 }
