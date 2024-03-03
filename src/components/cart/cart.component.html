@@ -39,7 +39,11 @@
                       (click)="changecount(idx, -1)"
                     />
                     <span> {{ item.quantity }} </span>
-                    <img src="assets/images/cart/plus-circle.svg" alt="" />
+                    <img
+                      src="assets/images/cart/plus-circle.svg"
+                      alt=""
+                      (click)="changecount(idx, 1)"
+                    />
                   </div>
                   <div>
                     <img
