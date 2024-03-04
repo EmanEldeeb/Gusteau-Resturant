@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-product-details',
   standalone: true,
   imports: [HttpClientModule, RouterModule, FormsModule],
-  providers: [ProductsService],
+  providers: [ProductsService, CartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
 })
@@ -20,14 +20,15 @@ export class ProductDetailsComponent implements OnInit {
   ingradiants: any;
   arr: any;
   relatedDishes: any = [];
-  cart: any;
+  // cart: any;
+  // for cart only inproduct details
   quantityValue: number = 1;
 
   order: any;
   constructor(
     myActivated: ActivatedRoute,
     private PService: ProductsService,
-    private cartService: CartService,
+    private _CartService: CartService,
     private router: Router
   ) {
     this.ID = myActivated.snapshot.params['id'];
@@ -70,48 +71,54 @@ export class ProductDetailsComponent implements OnInit {
   // addToCart(item: any) {
   // }
 
-  addToCart(item: any) {}
-  addTOCart() {
-    const cart = localStorage.getItem('cart');
-    const oldCart = cart ? JSON.parse(cart) : null;
-    if (!oldCart.items.length) {
-      console.log('first time');
-      oldCart.items.push({
-        quantity: this.quantityValue,
-        id: this.mealDetails.id,
-        price: this.mealDetails.price,
-        name: this.mealDetails.name,
-        image: this.mealDetails.imageUrl,
-      });
-      oldCart.totalPrice =
-        +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
-      localStorage.setItem('cart', JSON.stringify(oldCart));
-    } else {
-      const itemExistsINDEX = oldCart.items.findIndex((item: any) => {
-        return item.id == this.mealDetails.id;
-      });
-      const itemExists = oldCart.items[itemExistsINDEX];
-      if (itemExists) {
-        itemExists.quantity = +itemExists.quantity + +this.quantityValue;
-        oldCart.totalPrice =
-          +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
-        oldCart.items[itemExists] = itemExists;
-        localStorage.setItem('cart', JSON.stringify(oldCart));
-      }
-      if (!itemExists) {
-        oldCart.items.push({
-          quantity: this.quantityValue,
-          id: this.mealDetails.id,
-          price: this.mealDetails.price,
-          name: this.mealDetails.name,
-          image: this.mealDetails.imageUrl,
-        });
-        oldCart.totalPrice =
-          +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
-        localStorage.setItem('cart', JSON.stringify(oldCart));
-      }
-    }
+  // addToCart(item: any) {}
+  // working original
+  // addTOCart() {
+  //   const cart = localStorage.getItem('cart');
+  //   const oldCart = cart ? JSON.parse(cart) : null;
+  //   if (!oldCart.items.length) {
+  //     console.log('first time');
+  //     oldCart.items.push({
+  //       quantity: this.quantityValue,
+  //       id: this.mealDetails.id,
+  //       price: this.mealDetails.price,
+  //       name: this.mealDetails.name,
+  //       image: this.mealDetails.imageUrl,
+  //     });
+  //     oldCart.totalPrice =
+  //       +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
+  //     localStorage.setItem('cart', JSON.stringify(oldCart));
+  //   } else {
+  //     const itemExistsINDEX = oldCart.items.findIndex((item: any) => {
+  //       return item.id == this.mealDetails.id;
+  //     });
+  //     const itemExists = oldCart.items[itemExistsINDEX];
+  //     if (itemExists) {
+  //       itemExists.quantity = +itemExists.quantity + +this.quantityValue;
+  //       oldCart.totalPrice =
+  //         +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
+  //       oldCart.items[itemExists] = itemExists;
+  //       localStorage.setItem('cart', JSON.stringify(oldCart));
+  //     }
+  //     if (!itemExists) {
+  //       oldCart.items.push({
+  //         quantity: this.quantityValue,
+  //         id: this.mealDetails.id,
+  //         price: this.mealDetails.price,
+  //         name: this.mealDetails.name,
+  //         image: this.mealDetails.imageUrl,
+  //       });
+  //       oldCart.totalPrice =
+  //         +oldCart.totalPrice + +this.mealDetails.price * this.quantityValue;
+  //       localStorage.setItem('cart', JSON.stringify(oldCart));
+  //     }
+  //   }
 
+  //   this.quantityValue = 1;
+  // }
+  // work with service for cart btn
+  passToAddTocart(meal: any) {
+    this._CartService.addTOCartFun(meal, this.quantityValue);
     this.quantityValue = 1;
   }
 }

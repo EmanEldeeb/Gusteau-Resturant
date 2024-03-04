@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
   imports: [HttpClientModule, RouterModule, FormsModule],
-  providers: [ProductsService],
+  providers: [ProductsService, CartService],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
 })
@@ -18,7 +19,11 @@ export class ProductListComponent implements OnInit {
   minPrice = 0;
   maxPrice = 500;
   products: any[] = [];
-  constructor(myActivated: ActivatedRoute, private PService: ProductsService) {
+  constructor(
+    myActivated: ActivatedRoute,
+    private PService: ProductsService,
+    private _CartService: CartService
+  ) {
     this.categoryName = myActivated.snapshot.params['name'];
   }
   ngOnInit(): void {
@@ -39,5 +44,9 @@ export class ProductListComponent implements OnInit {
     this.products = this.AllMeals.filter((product: any) => {
       return product.price >= this.minPrice && product.price <= this.maxPrice;
     });
+  }
+  //add to cart
+  passToAddTocart(meal: any) {
+    this._CartService.addTOCartFun(meal, 1);
   }
 }
