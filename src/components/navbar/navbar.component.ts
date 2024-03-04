@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavbarComponent implements OnInit {
   isAuthenticated!: boolean;
+  userName: string = '';
 
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   ngOnInit(): void {
@@ -19,6 +21,12 @@ export class NavbarComponent implements OnInit {
       next: (isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
         console.log('nav', this.isAuthenticated);
+        const token = localStorage.getItem('_token') || '';
+        if (token != '') {
+          const decoded: any = jwtDecode(token);
+          this.userName = decoded.name;
+          console.log('token', this.userName);
+        }
       },
       error: (err) => {
         console.log(err);
