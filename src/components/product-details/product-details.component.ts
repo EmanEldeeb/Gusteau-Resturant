@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/products.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-product-details',
@@ -23,13 +24,15 @@ export class ProductDetailsComponent implements OnInit {
   // cart: any;
   // for cart only inproduct details
   quantityValue: number = 1;
+  isAuthenticated!: boolean;
 
   order: any;
   constructor(
     myActivated: ActivatedRoute,
     private PService: ProductsService,
     private _CartService: CartService,
-    private router: Router
+    private router: Router,
+    private _AuthService: AuthService
   ) {
     this.ID = myActivated.snapshot.params['id'];
     this.category = myActivated.snapshot.params['category'];
@@ -57,6 +60,16 @@ export class ProductDetailsComponent implements OnInit {
       },
       error: (err) => {
         throw err;
+      },
+    });
+    // change addtocart status
+    this._AuthService.isAuthenticated$.subscribe({
+      next: (isAuthenticated) => {
+        this.isAuthenticated = isAuthenticated;
+        console.log('prod-details', this.isAuthenticated);
+      },
+      error: (err) => {
+        console.log(err);
       },
     });
   }

@@ -32,7 +32,7 @@ export class LoginComponent {
 
   constructor(private _AuthService: AuthService, private _Router: Router) {}
   //#########################
-  ngOnInit(): void {}
+  // ngOnInit(): void {}
   // ############################
   LoginForm: FormGroup = new FormGroup({
     name: new FormControl('', [

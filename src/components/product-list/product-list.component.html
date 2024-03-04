@@ -64,9 +64,15 @@
           <!-- <div id="icon-holder" (click)="getValue(meal)">
             <i class="fa-solid fa-cart-shopping"></i>
           </div> -->
+          @if(isAuthenticated) {
           <div id="icon-holder" (click)="passToAddTocart(meal)">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
+          }@else{
+          <div id="icon-holder" routerLink="/register">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          }
         </div>
         } } @else { @for (product of products; track product.id){
         <div class="card col-sm-12 col-md-3 position-relative">

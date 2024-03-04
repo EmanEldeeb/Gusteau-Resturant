@@ -31,10 +31,17 @@
             <span>ADD TO CART </span>
             <i class="fa-solid fa-cart-shopping"></i>
           </button> -->
+          @if(isAuthenticated){
           <button id="cartBtn" (click)="passToAddTocart(mealDetails)">
             <span>ADD TO CART </span>
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
+          }@else{
+          <button id="cartBtn" routerLink="/register">
+            <span>ADD TO CART </span>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          }
         </div>
       </div>
     </div>

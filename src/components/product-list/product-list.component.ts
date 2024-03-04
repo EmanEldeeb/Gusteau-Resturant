@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-product-list',
@@ -19,10 +20,13 @@ export class ProductListComponent implements OnInit {
   minPrice = 0;
   maxPrice = 500;
   products: any[] = [];
+  isAuthenticated!: boolean;
+
   constructor(
     myActivated: ActivatedRoute,
     private PService: ProductsService,
-    private _CartService: CartService
+    private _CartService: CartService,
+    private _AuthService: AuthService
   ) {
     this.categoryName = myActivated.snapshot.params['name'];
   }
@@ -35,7 +39,16 @@ export class ProductListComponent implements OnInit {
         throw error;
       },
     });
-    // create cart holder
+    // change addtocart status
+    this._AuthService.isAuthenticated$.subscribe({
+      next: (isAuthenticated) => {
+        this.isAuthenticated = isAuthenticated;
+        console.log('prod-details', this.isAuthenticated);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
   getValue(order: any) {
     console.log(order);
