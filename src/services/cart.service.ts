@@ -4,18 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class CartService {
-  cartItems: any[] = [];
-
-  constructor() {}
-
-  // addToCart(item: any) {
-  //   this.cartItems.push(item);
-  // }
-
-  getCartItems() {
-    return this.cartItems;
-  }
-
   addTOCartFun(mealDetails: any, quantityValue: number) {
     const cart = localStorage.getItem('cart');
     const oldCart = cart ? JSON.parse(cart) : null;
