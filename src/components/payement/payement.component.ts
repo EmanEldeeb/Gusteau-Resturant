@@ -15,7 +15,7 @@ export class PayementComponent {
     render({
       id: '#payPalBtn',
       currency: 'USD',
-      value: '100.00',
+      value: `${TotalPrice}`,
       onApprove: (details) => {
         alert('Transaction Succecful');
       },

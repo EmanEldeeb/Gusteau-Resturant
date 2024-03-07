@@ -18,7 +18,7 @@ export class CategoriesComponent implements OnInit {
     private PService: ProductsService,
     private cartService: CartService
   ) {
-    this.cartItems = this.cartService.getCartItems();
+    // this.cartItems = this.cartService.getCartItems();
     console.log(this.cartItems);
   }
   AllCategries: any;

@@ -33,13 +33,17 @@
           </button> -->
           @if(isAuthenticated){
           <button id="cartBtn" (click)="passToAddTocart(mealDetails)">
-            <span>ADD TO CART </span>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div role="button">
+              <span>ADD TO CART </span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
           </button>
           }@else{
           <button id="cartBtn" routerLink="/register">
-            <span>ADD TO CART </span>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <div role="button">
+              <span>ADD TO CART </span>
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
           </button>
           }
         </div>
