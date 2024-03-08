@@ -15,6 +15,7 @@
       <div
         *ngFor="let special of ourSpecialities"
         class="d-flex our-specialities-holder flex-column row flex-md-row"
+        routerLink="/product/{{ special.category }}/{{ special.id }}"
       >
         <div class="img-holder position-relative col-12 col-lg-7 mb-3">
           <div class="overlay-holder position-absolute">
