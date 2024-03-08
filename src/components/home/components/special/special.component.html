@@ -18,7 +18,7 @@
   <div class="row gap-1 justify-content-center">
     <div
       class="card-holder card position-relative p-0 mb-4"
-      routerLink="/product/{{ category }}/{{ meal.id }}"
+      routerLink="/product/{{ meal.category }}/{{ meal.id }}"
       *ngFor="let meal of meals"
     >
       <img
