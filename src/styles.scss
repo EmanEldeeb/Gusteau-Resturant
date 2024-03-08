@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=M+PLUS+Rounded+1c&display=swap");
 $main-background: #0b1315;
 $identity-color: #c9ab81;
-body {
-  background-color: $main-background;
-}
+
 *,
 *::before,
 *::after {
@@ -14,7 +13,21 @@ body {
   outline: 0;
   list-style: none;
   text-decoration: none;
-  cursor: default;
+}
+:root {
+  --color-primary: #0b1315;
+  --color-secondary: #c9ab81;
+  --font-primary: "M PLUS Rounded 1c", sans-serif;
+  --font-secondary: "DM Serif Display", serif;
+  --font-tertiary: "Great Vibes", cursive;
+  --main-transition: all 0.2s 0.1s linear;
+  --section-margin: 3rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $main-background;
 }
 
 ::placeholder {
@@ -78,3 +91,146 @@ input:-webkit-autofill {
 section {
   min-height: calc(100vh - 37px);
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-primary);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secondary);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c39556;
+}
+.btn-primary {
+  position: relative;
+  font-family: var(--font-primary);
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  width: 200px;
+  padding: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px var(--color-secondary),
+    4px 0px 6px var(--color-secondary), 0px -4px 6px var(--color-secondary),
+    -4px 0px 6px var(--color-secondary);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.btn-primary::before {
+  content: "\f061";
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Font Awesome 5 Free";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  font-size: 0.8rem;
+  z-index: 2;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  animation: moving 2s linear infinite;
+  -webkit-animation: moving 2s linear infinite;
+}
+
+.btn-primary:hover {
+  box-shadow: none;
+  color: var(--color-secondary);
+  background-color: transparent;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+.btn-primary:hover::before {
+  color: var(--color-secondary);
+}
+.btn-center {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+// Start Heading
+.text-holder {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 1rem;
+  flex-direction: column;
+}
+.text-holder :nth-child(1) {
+  font-family: var(--font-tertiary);
+  font-size: 1.5rem;
+}
+
+.text-holder :nth-child(2) {
+  font-family: var(--font-primary);
+  color: var(--color-secondary);
+  font-size: 2rem;
+}
+.text-holder :nth-child(3) {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+}
+// End Heading
+// Strat Specialities && Dining
+.meals-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+}
+.img-holder img {
+  height: 100%;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+// End Specialities && Dining
+// Start Vector
+.rotated {
+  left: 10%;
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+}
+// End Vector
+//Strat animation
+@keyframes moving {
+  0% {
+    right: 12%;
+  }
+  50% {
+    right: 0;
+  }
+  100% {
+    right: 12%;
+  }
+}
+//End Animation
+//End Global Styling
