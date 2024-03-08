@@ -1,0 +1,62 @@
+<section class="image-holder">
+  <div class="overlay">
+    <img src="assets/images/image-holder-overlay.svg" alt="" />
+  </div>
+  <div
+    class="footer-holder row position-relative flex-sm-column flex-lg-row align-items-sm-center gap-sm-0"
+  >
+    <form
+      class="form mb-sm-3 mb-lg-0 col-sm-12 col-lg-6"
+      (submit)="sendEmail($event)"
+      (submit)="restField()"
+    >
+      <div class="form-box col-lg-10 mx-3 mt-3 p-3">
+        <div class="header-text text-center text-sm-start">Get In Touch</div>
+        <input name="name" placeholder="Name" type="text" [(ngModel)]="name" />
+        <input
+          name="email"
+          placeholder="Email"
+          type="email"
+          [(ngModel)]="email"
+        />
+        <textarea
+          name="message"
+          placeholder="Content"
+          [(ngModel)]="message"
+        ></textarea>
+        <input id="terms" type="checkbox" /> <label for="terms"></label>
+        <span class="fw-bold">I would like to receive the newsletter.</span>
+        <button class="btn-primary mt-5" type="submit">Submit</button>
+      </div>
+    </form>
+    <div
+      class="footer d-flex flex-column justify-content-center align-items-center col-sm-12 col-lg-5"
+    >
+      <div class="fw-bold footer-heading-one text-center">
+        WE ARE READY TO GIVE YOU THE BEST DINNING EXPERIENCE.
+      </div>
+      <div
+        class="d-flex flex-column flex-lg-row address-holder footer-heading-two ms-2"
+      >
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-location-dot"></i>
+          <p class="mb-2 mb-xl-0">
+            Masr ElGdeda, Street Sheraton Elmatar , 35222
+          </p>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <i class="fa-solid fa-phone"></i>
+          <p class="mb-0">Call us: +01063403215</p>
+        </div>
+      </div>
+      <div class="mt-5 logo-holder">
+        <img src="./assets/images/logo.png" alt="" />
+      </div>
+      <div class="all-social-holder d-flex justify-content-center gap-2">
+        <div class="facebook social-holder">facebook</div>
+        <div class="twitter social-holder">twitter</div>
+        <div class="instagram social-holder">instagram</div>
+      </div>
+    </div>
+  </div>
+</section>

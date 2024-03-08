@@ -1,0 +1,68 @@
+section {
+  margin: var(--section-margin);
+  position: relative;
+  z-index: 3;
+}
+.card-holder {
+  cursor: pointer;
+  width: 20rem;
+  top: 0;
+  border-radius: 0;
+  height: 33rem;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+.card-holder::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: var(--color-secondary);
+  width: 0%;
+  height: 5px;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.card-holder:hover {
+  top: -10px;
+}
+.card-holder:hover:before {
+  width: 102%;
+  height: 101%;
+}
+.card-holder img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+.card-holder:nth-child(odd) {
+  background-color: #2e2e2e;
+}
+
+.card-title {
+  color: var(--color-secondary);
+}
+.card-holder:nth-child(even) {
+  background-color: #1e1e1e;
+}
+.stars {
+  position: absolute;
+  top: 90%;
+  color: #f5be32;
+}

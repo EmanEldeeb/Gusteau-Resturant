@@ -1,0 +1,44 @@
+<section class="special-holder position-relative text-light overflow-hidden">
+  <div class="vector-holder">
+    <img
+      class="rotated position-absolute"
+      src="assets/images/Vector 5.png"
+      alt="Vector"
+    />
+  </div>
+  <div class="text-holder m-2">
+    <p>Special menu</p>
+    <p>Today’s Special</p>
+    <p>
+      Special menu oftenly comes different everyday,<br />
+      this is our special food for today
+    </p>
+  </div>
+
+  <div class="row gap-1 justify-content-center">
+    <div
+      class="card-holder card position-relative p-0 mb-4"
+      [routerLink]="['/product/:category', meal.id]"
+      *ngFor="let meal of meals"
+    >
+      <img
+        class="meal-img"
+        [src]="meal.imageUrl"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        ]
+        <h5 class="card-title">{{ meal.name }}</h5>
+        <p class="card-text text-light">{{ meal.ingradients.join(" - ") }}</p>
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

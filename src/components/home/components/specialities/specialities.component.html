@@ -1,0 +1,43 @@
+<section class="special-holder position-relative text-light overflow-hidden">
+  <div class="image-holder">
+    <img src="assets/images/Image Divider.svg" alt="" />
+  </div>
+  <div class="specialities-image-holder rotated position-absolute">
+    <img src="assets/images/Vector 5.png" alt="" />
+  </div>
+  <div class="container">
+    <div class="text-holder mt-5">
+      <p>Quality food for you</p>
+      <p>Our Specialities</p>
+      <p>
+        Authentic food from our restaurant served with high quality ingredients
+      </p>
+    </div>
+    <button class="btn-primary btn-center my-5" routerLink="/categories">
+      OUR SPECIAL DISHES
+    </button>
+    <div class="meals-holder position-relative">
+      <div
+        *ngFor="let special of ourSpecialities"
+        class="d-flex our-specialities-holder flex-column row flex-md-row"
+      >
+        <div class="img-holder position-relative col-12 col-lg-7 mb-3">
+          <div class="overlay-holder position-absolute">
+            <img src="assets/images/Rectangle 37.svg" alt="" />
+          </div>
+          <img [src]="special.imageUrl" alt="" />
+        </div>
+        <div class="sec-text-holder text-center text-lg-start col-lg-4">
+          <h4>{{ special.name }}</h4>
+          <p class="desc">
+            {{ special.ingradients.join(" - ") }}
+          </p>
+          <div class="price">{{ special.price }}EGP</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-primary my-5 btn-center" routerLink="/categories">
+      Show More
+    </button>
+  </div>
+</section>

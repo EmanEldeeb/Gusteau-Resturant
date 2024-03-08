@@ -1,0 +1,38 @@
+section {
+  background-image: url("../../../../assets/images/image-holder.jpg");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.overlay {
+  width: 500%;
+  position: absolute;
+  z-index: -1;
+}
+.overlay img {
+  width: 100%;
+}
+.text-holder {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.text-holder .box :nth-child(1) {
+  font-family: var(--font-tertiary);
+  letter-spacing: 1rem;
+  font-size: 1.5rem;
+}
+
+.text-holder .box :nth-child(2) {
+  font-family: var(--font-primary);
+  color: var(--color-secondary);
+  font-size: 2rem;
+}
+.text-holder .box :nth-child(3) {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+}

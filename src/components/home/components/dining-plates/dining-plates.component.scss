@@ -1,0 +1,51 @@
+section {
+  position: relative;
+  z-index: 3;
+}
+.img-holder {
+  height: 20rem;
+  overflow: hidden;
+}
+.img-holder img {
+  max-width: 100%;
+}
+.meals-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+}
+.dining-image,
+.dining-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.meals-holder .our-specialities-holder {
+  width: 100%;
+  cursor: pointer;
+}
+
+.meals-holder * {
+  margin-right: 2rem;
+}
+@media (max-width: 992px) {
+  .meals-holder * {
+    margin-right: 0;
+  }
+}
+.meals-holder :nth-child(even) {
+  flex-direction: row-reverse !important;
+}
+.sec-text-holder :nth-child(1) {
+  color: var(--color-secondary);
+  font-family: var(--font-secondary);
+}
+.sec-text-holder :nth-child(2) {
+  font-family: var(--font-primary);
+}
+span {
+  font-weight: bold;
+  color: var(--color-secondary);
+}

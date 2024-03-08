@@ -1,0 +1,35 @@
+<section class="special-holder position-relative text-light overflow-hidden">
+  <div class="text-holder my-5">
+    <p>Choose your event</p>
+    <p>Dining Plates</p>
+    <div>
+      We provide dining Plates for your special day<br />
+      with your important people.
+    </div>
+  </div>
+  <div class="dining-image position-absolute">
+    <img src="assets/images/diningBackground.svg" alt="" />
+  </div>
+  <div class="container">
+    <div class="meals-holder">
+      <div
+        *ngFor="let special of ourSpecialities"
+        class="d-flex our-specialities-holder flex-column row flex-md-row"
+      >
+        <div class="img-holder position-relative col-12 col-lg-7 mb-3">
+          <div class="overlay-holder position-absolute">
+            <img src="assets/images/Rectangle 37.svg" alt="" />
+          </div>
+          <img [src]="special.imageUrl" alt="" />
+        </div>
+        <div class="sec-text-holder text-center text-lg-start col-lg-4">
+          <h4>{{ special.name }}</h4>
+          <p class="desc">
+            {{ special.ingradients.join(" - ") }}
+          </p>
+          <div class="price">{{ special.price }}EGP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
