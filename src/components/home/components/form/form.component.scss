@@ -158,12 +158,7 @@ svg {
   margin-top: 70px;
   font-size: 18px;
 }
-@media (max-width: 480px) {
-  .all-social-holder {
-    margin-top: 20px;
-    font-size: 15px;
-  }
-}
+
 .social-holder {
   text-transform: uppercase;
   font-family: var(--font-secondary);
@@ -181,4 +176,18 @@ a {
 }
 a:hover {
   opacity: 0.5;
+}
+
+.form-center {
+  transform: translate(-50%, -50%);
+  width: 77%;
+}
+@media (max-width: 480px) {
+  .all-social-holder {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .form-center {
+    width: 90%;
+  }
 }
