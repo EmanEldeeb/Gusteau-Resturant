@@ -37,7 +37,6 @@ export class AboutUsComponent {
     this._ProductsService.getData('years').subscribe({
       next: (response) => {
         this.AnnualArrData = response;
-        console.log(response);
       },
       error: (err) => {
         console.log(err);

@@ -40,12 +40,11 @@ export class NavbarComponent implements OnInit {
     this._AuthService.isAuthenticated$.subscribe({
       next: (isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
-        // console.log('nav', this.isAuthenticated);
+
         const token = localStorage.getItem('_token') || '';
         if (token != '') {
           const decoded: any = jwtDecode(token);
           this.userName = decoded.name;
-          console.log('token', this.userName);
         }
       },
       error: (err) => {
@@ -66,7 +65,6 @@ export class NavbarComponent implements OnInit {
     for (let i = 0; i < this.allcategory.length; i++) {
       this._ProductsService.getCategoryByName(this.allcategory[i]).subscribe({
         next: (res: any) => {
-          console.log(this.allMeals);
           this.allMeals = [...this.allMeals, ...res];
         },
       });

@@ -42,7 +42,6 @@ export class AuthService {
     AuthService.isAuthenticatedSubject.asObservable();
 
   setAuthenticationStatus(isAuthenticated: boolean): void {
-    console.log('service', AuthService.isAuthenticatedSubject);
     AuthService.isAuthenticatedSubject.next(isAuthenticated);
   }
 }

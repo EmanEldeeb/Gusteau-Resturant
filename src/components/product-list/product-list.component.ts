@@ -44,15 +44,11 @@ export class ProductListComponent implements OnInit {
     this._AuthService.isAuthenticated$.subscribe({
       next: (isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
-        console.log('prod-details', this.isAuthenticated);
       },
       error: (err) => {
         console.log(err);
       },
     });
-  }
-  getValue(order: any) {
-    console.log(order);
   }
   applyFilter() {
     this.products = this.AllMeals.filter((product: any) => {

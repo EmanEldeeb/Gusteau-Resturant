@@ -29,7 +29,6 @@ export class CartComponent implements OnInit {
   deleteFromCart(index: any) {
     this.cartItems.forEach((item: any, arrindex) => {
       if (arrindex == index) {
-        console.log(item.quantity, 'delete');
         this.cartTotalPrice = this.cartTotalPrice - item.price * item.quantity;
         this.cart.totalPrice = this.cartTotalPrice;
         this.cartItems.splice(index, 1);

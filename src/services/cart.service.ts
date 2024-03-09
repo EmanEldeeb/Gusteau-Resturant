@@ -8,7 +8,6 @@ export class CartService {
     const cart = localStorage.getItem('cart');
     const oldCart = cart ? JSON.parse(cart) : null;
     if (!oldCart.items.length) {
-      console.log('first time');
       oldCart.items.push({
         quantity: quantityValue,
         id: mealDetails.id,

@@ -1,4 +1,3 @@
-// declare var google: any;
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -31,9 +30,7 @@ export class LoginComponent {
   cart: {} = { items: [], totalPrice: 0 };
 
   constructor(private _AuthService: AuthService, private _Router: Router) {}
-  //#########################
-  // ngOnInit(): void {}
-  // ############################
+
   LoginForm: FormGroup = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -48,16 +45,16 @@ export class LoginComponent {
   });
   sentUserDataToServer() {
     let value = this.LoginForm.value;
-    console.log(this.LoginForm);
+
     delete value['name'];
-    console.log(value);
+
     if (this.LoginForm.valid) {
       this.loading = true;
       this._AuthService.postLoginRequest(value).subscribe({
         next: (response) => {
           this.loading = false;
           this.loginerror = false;
-          console.log(response);
+
           localStorage.setItem('cart', JSON.stringify(this.cart));
           localStorage.setItem('_token', response.token);
           this.onRegistrationSuccess();
@@ -66,15 +63,12 @@ export class LoginComponent {
         error: (err) => {
           this.loginerror = true;
           this.loading = false;
-          console.log('err', err, this.loading);
         },
       });
     }
   }
   // subsribe to isAuthenticated to change layout of navbar after login
   onRegistrationSuccess(): void {
-    console.log('successs login');
-    // Notify the shared service that the user is authenticated
     this._AuthService.setAuthenticationStatus(true);
   }
 }
