@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="/home">
       <img
-        src="../../assets/images/gusteau-resturant-high-resolution-logo-transparent (1) 1.svg"
+        src="assets/images/gusteau-resturant-high-resolution-logo-transparent (1) 1.svg"
         alt=""
       />
     </a>
@@ -43,6 +43,7 @@
             id=""
             class="form-input search"
             placeholder=" Search..."
+            (keyup)="search()"
           />
         </li>
         <li class="nav-item">
@@ -80,3 +81,13 @@
     </div>
   </div>
 </nav>
+<div class="search-result">
+  <div class="row">
+    @for (meal of allMeals; track meal.name) {
+      <div class="col-md-4">
+      <div>{{meal.name}}</div>
+      </div>
+    }
+
+  </div>
+</div>
