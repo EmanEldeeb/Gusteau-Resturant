@@ -1,0 +1,319 @@
+.box {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #0f0f0f,
+    #191919,
+    #222222,
+    #2b2b2b
+  );
+  text-align: center;
+  padding: 20px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.box h2 {
+  color: white;
+  font-family: var(--third-font);
+  margin: 50px 0;
+}
+
+.box h4 {
+  font-family: var(--main-font);
+  width: 250px;
+  margin: 50px 0;
+}
+
+.box h5 {
+  font-family: var(--second-font);
+  margin: 50px 0;
+  color: white;
+  width: 300px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.image-box {
+  width: 400px;
+  height: 500px;
+  border: 2px solid var(--secondary-color);
+  position: relative;
+  top: 30px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+}
+
+// ================== Start main Titel Section ==================
+
+.menue-title {
+  display: flex;
+  justify-content: center;
+}
+.menue-title h1 {
+  font-family: var(--second-font);
+}
+
+.menue-title .shapes {
+  margin: 0;
+  position: relative;
+  top: 3px;
+}
+
+.menue-title .shapes .shape-l {
+  display: block;
+  width: 22px;
+  border: 1px solid #c9ab81;
+  position: relative;
+}
+
+.menue-title .shapes .shape1,
+.menue-title .shapes .shape2 {
+  top: 22px;
+  right: 7px;
+}
+
+.menue-title .shapes .shape1,
+.menue-title .shapes .shape3,
+.menue-title .shapes .shape5,
+.menue-title .shapes .shape7 {
+  transform: rotate(30deg);
+}
+
+.menue-title .shapes .shape2,
+.menue-title .shapes .shape4,
+.menue-title .shapes .shape6,
+.menue-title .shapes .shape8 {
+  transform: rotate(-30deg);
+}
+
+.menue-title .shapes .shape3,
+.menue-title .shapes .shape4 {
+  top: 19px;
+  right: 30px;
+}
+
+.menue-title .shapes .shape5,
+.menue-title .shapes .shape6 {
+  top: 22px;
+  left: 7px;
+}
+
+.menue-title .shapes .shape7,
+.menue-title .shapes .shape8 {
+  top: 19px;
+  left: 30px;
+}
+//================== End main Titel Section ==================
+
+.about-statistics {
+  margin-top: 100px;
+}
+
+.about-statistics .statbox {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #0f0f0f,
+    #191919,
+    #222222,
+    #2b2b2b
+  );
+  width: 250px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 15px;
+}
+
+.about-statistics .statbox img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 2px solid var(--secondary-color);
+}
+
+.about-statistics .statbox .stas-text p {
+  color: white;
+}
+
+.dashboard {
+  border-bottom: 1px solid var(--secondary-color);
+  border-top: 1px solid var(--secondary-color);
+  margin: 100px auto 0;
+  width: 50%;
+}
+
+.dashboard h1 {
+  font-family: var(--third-font);
+}
+
+.bestS {
+  margin-bottom: 50px;
+}
+
+.bestS h4,
+.annualProf h4 {
+  font-family: var(--main-font);
+  font-weight: bold;
+}
+
+.barchart ul li {
+  list-style: none;
+}
+
+.annualProf {
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+
+.barchartInside {
+  /* background-color: cadetblue; */
+  position: relative;
+  width: 80%;
+  height: 600px;
+  border: 2px solid var(--secondary-color);
+  border-top: none;
+  border-right: none;
+  z-index: 0;
+  margin-bottom: 100px;
+}
+
+.barchartInside span {
+  position: absolute;
+  bottom: -40px;
+  left: 5px;
+}
+
+.v-dollars {
+  position: relative;
+  top: 0;
+  left: -30px;
+  width: 100%;
+  height: 500px;
+  z-index: 100;
+}
+
+.v-dollars li {
+  position: relative;
+  left: -11px;
+  height: 65px;
+  border-bottom: 1px solid #c9ab8150;
+}
+
+.v-dollars li div {
+  position: absolute;
+  width: 80px;
+  font-size: 16px;
+  left: -90px;
+  color: white;
+  padding-top: 50px;
+  text-align: right;
+}
+
+.bar {
+  width: 50px;
+  height: 24%;
+  position: absolute;
+  left: 3%;
+  bottom: 0px;
+  z-index: 1000;
+  margin: 0 40px;
+  background-color: #c9ab8150;
+  color: white;
+}
+
+.two {
+  left: 15%;
+  height: 32%;
+  background-color: #c9ab8160;
+}
+
+.three {
+  left: 27%;
+  height: 50%;
+  background-color: #c9ab8170;
+}
+
+.four {
+  left: 39%;
+  height: 20%;
+  background-color: #c9ab8180;
+}
+
+.five {
+  left: 51%;
+  height: 65%;
+  background-color: #c9ab8190;
+}
+
+.six {
+  left: 63%;
+  height: 85%;
+  background-color: #c9ab81;
+}
+
+// ================================================================= //
+
+@media (max-width: 992px) {
+  .image-box {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-statistics .statbox {
+    margin-top: 20px;
+  }
+
+  .bar {
+    width: 15px;
+  }
+
+  .bar.one {
+    left: 8%;
+  }
+
+  .bar.two {
+    left: 20%;
+  }
+
+  .bar.three {
+    left: 32%;
+  }
+
+  .bar.four {
+    left: 44%;
+  }
+
+  .bar.five {
+    left: 56%;
+  }
+
+  .bar.six {
+    left: 68%;
+  }
+
+  .barchartInside span {
+    font-size: 12px;
+    left: 0;
+    bottom: -30px;
+  }
+
+  .v-dollars {
+    left: 15px;
+  }
+
+  .v-dollars li div {
+    font-size: 12px;
+  }
+}

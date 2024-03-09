@@ -1,1 +1,93 @@
-<p>about-us works!</p>
+<!-- ==================================================--------------------------------- -->
+<div class="parient">
+  <div class="container">
+    <!-- Start About Content Text Section -->
+    <div class="row about-text mt-5">
+      <!-- Start text -->
+      <div class="col-lg-6 content-text">
+        <div class="box">
+          <h2>About Us</h2>
+          <h4>FINE FLAVORS CHIC DINING – WELCOME TO [Gusteau] .</h4>
+          <h5>
+            “ We only use the five star quality for our menu, come and get the
+            richness in every food we serve.”
+          </h5>
+        </div>
+      </div>
+      <!-- End text -->
+      <!-- Start Image -->
+      <div class="col-lg-6 image d-flex justify-content-center">
+        <div class="image-box">
+          <img src="assets/images/seafood1.jpg" alt="" />
+        </div>
+      </div>
+      <!-- End Image -->
+    </div>
+    <!-- End About Content Text Section -->
+    <!-- ============================================================================================= -->
+    <!-- Start Statistics Section -->
+    <div class="dashboard row">
+      <h1 class="text-center m-0 p-3">Dashboard</h1>
+    </div>
+    <div class="row about-statistics justify-content-around">
+      <div class="row bestS">
+        <h4 class="text-center text-white mb-3">BestSeller Dishes</h4>
+      </div>
+      <!-- Start Stat Box  -->
+      <div
+        *ngFor="let bx of bestSellerArrData"
+        class="col-md-4 statbox1 statbox"
+      >
+        <img class="img1" [src]="bx.imageUrl" alt="" />
+        <div class="stas-text text-center">
+          <h3>{{ bx.stat }}</h3>
+          <p>{{ bx.name }}</p>
+        </div>
+      </div>
+      <!-- End Stat statbox  -->
+      <!-- ===================================================================================== -->
+      <!-- Start Barchart -->
+
+      <div class="row mb-3 annualProf">
+        <h4 class="text-center text-white mb-3">Annual Profit</h4>
+      </div>
+      <div
+        class="row barchart d-flex justify-content-center align-items-center"
+      >
+        <div class="col-sm-12 barchartInside">
+          @if(AnnualArrData) {
+          <div class="bar one">
+            <span>{{ AnnualArrData[0].year }}</span>
+          </div>
+          <div class="bar two">
+            <span>{{ AnnualArrData[1].year }}</span>
+          </div>
+          <div class="bar three">
+            <span>{{ AnnualArrData[2].year }}</span>
+          </div>
+          <div class="bar four">
+            <span>{{ AnnualArrData[3].year }}</span>
+          </div>
+          <div class="bar five">
+            <span>{{ AnnualArrData[4].year }}</span>
+          </div>
+          <div class="bar six">
+            <span>{{ AnnualArrData[5].year }}</span>
+          </div>
+          }
+
+          <ul class="v-dollars">
+            @if(rateAnnualProfitsArrData){
+            <li *ngFor="let r of rateAnnualProfitsArrData">
+              <div>{{ r.rate }}</div>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- End Barchart -->
+    </div>
+    <!-- End Statistics Section -->
+  </div>
+</div>

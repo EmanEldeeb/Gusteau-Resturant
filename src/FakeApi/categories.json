@@ -1398,5 +1398,68 @@
       "category": "Breakfast",
       "area": "Indian"
     }
+  ],
+  "BestSeller": [
+    {
+      "name": "Beef and Mustard Pie",
+      "stat": "95%",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/sytuqu1511553755.jpg"
+    },
+    {
+      "name": "Escovitch Fish",
+      "stat": "85%",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/1520084413.jpg"
+    },
+    {
+      "name": "Apple Frangipan Tart",
+      "stat": "75%",
+      "imageUrl": "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg"
+    }
+  ],
+  "rateProfit": [
+    {
+      "rate": "4 m"
+    },
+    {
+      "rate": "3.5 m"
+    },
+    {
+      "rate": "3 m"
+    },
+    {
+      "rate": "2.5 m"
+    },
+    {
+      "rate": "2 m"
+    },
+    {
+      "rate": "1.5 m"
+    },
+    {
+      "rate": "1 m"
+    },
+    {
+      "rate": "0.5 m"
+    }
+  ],
+  "years": [
+    {
+      "year": "2018"
+    },
+    {
+      "year": "2019"
+    },
+    {
+      "year": "2020"
+    },
+    {
+      "year": "2021"
+    },
+    {
+      "year": "2022"
+    },
+    {
+      "year": "2023"
+    }
   ]
 }
