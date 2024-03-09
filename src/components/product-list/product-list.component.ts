@@ -15,7 +15,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent implements OnInit {
-  categoryName: any;
+  categoryName: string;
   AllMeals: any;
   minPrice = 0;
   maxPrice = 500;
