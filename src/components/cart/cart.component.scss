@@ -1,3 +1,80 @@
+// /* @import url(../../assets/fonts/myfonts.scss); */
+// * {
+//   color: #c9ab81;
+//   font-family: dispalyregular;
+// }
+
+// /*______________________________________*/
+
+// /* start of left cart */
+// .cart_header div {
+//   font-size: 26px;
+//   @media (max-width: "400px") {
+//     font-size: 19px;
+//   }
+// }
+// .items_button {
+//   border: 2px solid #c9ab81;
+//   font-size: 20px;
+//   width: 100px;
+// }
+// .item_name_price {
+//   font-size: 20px;
+// }
+// .remove_add {
+//   cursor: pointer;
+// }
+// /* end of left cart */
+// /*______________________________________*/
+// /* start of paypal */
+// .form_container {
+//   border: 2px solid #c9ab81;
+//   border-radius: 10px;
+//   padding: 15px 40px;
+//   @media (max-width: "430px") {
+//     padding: 20px;
+//   }
+// }
+// @media (max-width: "400px") {
+//   .form_header {
+//     flex-direction: column;
+//     justify-content: center;
+//   }
+// }
+// .confirm_payment {
+//   font-size: 22px;
+// }
+// input {
+//   background-color: transparent;
+//   border: 2px solid #c9ab81;
+//   height: 50px;
+// }
+
+// .inputs {
+//   display: flex;
+//   flex-direction: column;
+//   margin-bottom: 20px;
+// }
+// label {
+//   margin-bottom: 5px;
+// }
+// .expiry,
+// .cvv {
+//   width: 100px;
+// }
+// .btn_main {
+//   width: 100%;
+//   margin: 15px 0px;
+// }
+// .btn_pay {
+//   border: 2px solid #c9ab81;
+//   width: 100px;
+//   height: 50px;
+//   box-shadow: 0 0 8px#c9ab81;
+// }
+
+// /*end of paypal */
+
 /* @import url(../../assets/fonts/myfonts.scss); */
 * {
   color: #c9ab81;
@@ -24,53 +101,28 @@
 .remove_add {
   cursor: pointer;
 }
-/* end of left cart */
-/*______________________________________*/
-/* start of paypal */
-.form_container {
-  border: 2px solid #c9ab81;
-  border-radius: 10px;
-  padding: 15px 40px;
-  @media (max-width: "430px") {
-    padding: 20px;
+.left_cart {
+  .cart-items-container {
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c9ab81 #c9ab81;
   }
 }
-@media (max-width: "400px") {
-  .form_header {
-    flex-direction: column;
-    justify-content: center;
+.payement-details {
+  a {
+    text-decoration: none;
   }
 }
-.confirm_payment {
-  font-size: 22px;
-}
-input {
-  background-color: transparent;
+.main-btn {
   border: 2px solid #c9ab81;
-  height: 50px;
-}
-
-.inputs {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-}
-label {
-  margin-bottom: 5px;
-}
-.expiry,
-.cvv {
-  width: 100px;
-}
-.btn_main {
-  width: 100%;
-  margin: 15px 0px;
-}
-.btn_pay {
-  border: 2px solid #c9ab81;
-  width: 100px;
+  width: 130px;
   height: 50px;
   box-shadow: 0 0 8px#c9ab81;
 }
-
-/*end of paypal */
+.item_name_price {
+  width: 400px;
+}
+.check_btn {
+  cursor: pointer;
+}
