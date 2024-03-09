@@ -164,10 +164,10 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './product-details.component.scss',
 })
 export class ProductDetailsComponent implements OnInit {
-  ID = 0;
-  category: any;
+  ID = number;
+  category: string;
   mealDetails: any;
-  ingradiants: any;
+  ingradiants: string[] = [];
   arr: any;
   relatedDishes: any = [];
   // cart
