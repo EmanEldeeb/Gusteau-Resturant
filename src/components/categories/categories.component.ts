@@ -1,8 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit, input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ProductsService } from '../../services/products.service';
-import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-categories',
@@ -14,20 +13,16 @@ import { CartService } from '../../services/cart.service';
 })
 export class CategoriesComponent implements OnInit {
   cartItems: any[] = [];
-  constructor(
-    private PService: ProductsService,
-    private cartService: CartService
-  ) {
-    // this.cartItems = this.cartService.getCartItems();
-    console.log(this.cartItems);
-  }
+  constructor(private PService: ProductsService) {}
   AllCategries: any;
   ngOnInit(): void {
     this.PService.getAllCategories().subscribe({
       next: (data) => {
         this.AllCategries = data;
       },
-      error: (error) => {},
+      error: (err) => {
+        throw new Error(err);
+      },
     });
   }
 }

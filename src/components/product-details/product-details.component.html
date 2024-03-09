@@ -49,19 +49,45 @@
         </div>
       </div>
     </div>
-    <h2 id="relatedTitle" class="text-center">Related Dishes</h2>
     }
+    <!-- Start main title -->
+    <div class="row" style="margin-top: 20px">
+      <div class="col-sm-12">
+        <div class="menue-title">
+          <!-- left shapes -->
+          <div class="shapes">
+            <span class="shape1 shape-l"></span>
+            <span class="shape2 shape-l"></span>
+            <span class="shape3 shape-l"></span>
+            <span class="shape4 shape-l"></span>
+          </div>
+          <h1>Related Dishes</h1>
+          <!-- right shapes -->
+          <div class="shapes">
+            <span class="shape5 shape-l"></span>
+            <span class="shape6 shape-l"></span>
+            <span class="shape7 shape-l"></span>
+            <span class="shape8 shape-l"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End main title -->
     <div class="row justify-content-between" id="dishes-sec">
       @for(dish of relatedDishes; track relatedDishes.id) {
-      <div id="relatedDishis" class="col-sm-12 col-md-3 text-center">
+      <a
+        routerLink="/product/{{ category }}/{{ dish.id }}"
+        id="relatedDishis"
+        class="col-sm-12 col-md-3 text-center"
+      >
         <div>
           <img id="image" src="{{ dish.imageUrl }}" alt="" />
         </div>
         <div id="mealInfo">
-          <h4>{{ dish.name }}</h4>
+          <h5>{{ dish.name }}</h5>
           <p>{{ dish.price }} EGP</p>
         </div>
-      </div>
+      </a>
       }
     </div>
   </div>

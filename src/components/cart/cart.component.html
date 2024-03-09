@@ -1,9 +1,8 @@
-<section>
+<!-- <section>
   <main>
     <div class="container mt-5">
       <div class="row justify-content-between gy-5 all_cart_payment_content">
-        <!----------------------------------->
-        <!-- start left_cart -->
+      
         @if(cartItems){
         <div class="col-md-12 col-lg-6 order-md-1 left_cart">
           <div class="cart_header d-flex justify-content-between">
@@ -14,7 +13,6 @@
           </div>
           @for(item of cartItems; track item.name; let idx = $index){
           <div class="one-cart-item mt-5">
-            <!----------------------------------->
             <div class="d-md-flex justify-content-around g-4">
               <div
                 class="img_elipse d-flex justify-content-center align-items-center"
@@ -28,7 +26,6 @@
                   <p class="pe-5">{{ item.name }}</p>
                   <span>{{ item.price | currency : "EGP" }}</span>
                 </div>
-                <!------------------------------>
                 <div
                   class="remove_add d-flex flex-md-row flex-sm-row justify-content-between"
                 >
@@ -61,6 +58,85 @@
           <div class="payement-details">
             <div>price{{ cartTotalPrice | currency : "EGP" }}</div>
             <button class="main-btn"><a href="/payement">check out</a></button>
+          </div>
+        </div>
+
+        }
+     
+      </div>
+    </div>
+  </main>
+</section> -->
+<section>
+  <main>
+    <div class="container mt-5">
+      <div class="row justify-content-between gy-5 all_cart_payment_content">
+        <!----------------------------------->
+        <!-- start left_cart -->
+        @if(cartItems){
+        <div class="col-md-12 col-lg-12 order-md-1 left_cart m-auto">
+          <div class="cart_header d-flex justify-content-between mb-3 mt-4">
+            <div class="">Your Order Summary</div>
+            <button class="rounded-4 bg-transparent items_button">
+              {{ cartItems.length }} items
+            </button>
+          </div>
+          <div class="cart-items-container">
+            @for(item of cartItems; track item.name; let idx = $index){
+            <div class="one-cart-item mt-5">
+              <!----------------------------------->
+              <div class="d-md-flex justify-content-around g-4">
+                <div
+                  class="img_elipse d-flex justify-content-center align-items-center"
+                >
+                  <img [src]="item.image" alt="" height="100" />
+                </div>
+                <div class="item_info ps-md-5">
+                  <div
+                    class="item_name_price d-flex justify-content-between pt-4"
+                  >
+                    <p class="pe-5 item_name_only">{{ item.name }}</p>
+                    <span>{{ item.price | currency : "EGP" }}</span>
+                  </div>
+                  <!------------------------------>
+                  <div
+                    class="remove_add d-flex flex-md-row flex-sm-row justify-content-between"
+                  >
+                    <div class="add_minus">
+                      <img
+                        src="assets/images/cart/minus-circle.svg"
+                        alt=""
+                        (click)="changecount(idx, -1)"
+                      />
+                      <span> {{ item.quantity }} </span>
+                      <img
+                        src="assets/images/cart/plus-circle.svg"
+                        alt=""
+                        (click)="changecount(idx, 1)"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="assets/images/cart/bin-essential-trash-svgrepo-com 1.svg"
+                        alt="Delete"
+                        (click)="deleteFromCart(idx)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="w-100 border-3" />
+            </div>
+            }
+          </div>
+
+          <div class="payement-details d-flex justify-content-between mt-5">
+            <div class="fs-5">
+              {{ cartTotalPrice | currency : "EGP" }}
+            </div>
+            <button class="main-btn fs-5 mb-4">
+              <a href="/payement" class="check_btn">check out</a>
+            </button>
           </div>
         </div>
 

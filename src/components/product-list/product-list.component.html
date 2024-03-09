@@ -3,14 +3,17 @@
     <h2>{{ categoryName }}</h2>
     <div class="row justify-content-center">
       <div id="filter" class="row my-3">
-        <div
+        <form
+          (change)="applyFilter()"
           id="priceFilter"
-          class="d-sm-flex flex-sm-column flex-md-row justify-content-md-around"
+          name="form"
+          class="d-sm-flex flex-sm-column flex-md-row justify-content-md-around align-items-center"
         >
           <h4>Price</h4>
           <div class="d-flex align-items-center justify-content-around">
             <label for="min">Min</label>
             <input
+              name="min"
               id="min"
               type="range"
               placeholder="Min Price"
@@ -24,6 +27,7 @@
           <div class="d-flex align-items-center justify-content-around">
             <label for="max">Max</label>
             <input
+              name="max"
               id="max"
               type="range"
               placeholder="Max Price"
@@ -35,47 +39,13 @@
             />
             <span>{{ maxPrice }}</span>
           </div>
-          <button class="main-btn" (click)="applyFilter()">Apply</button>
-        </div>
+        </form>
       </div>
       <div class="row">
-        @if(products.length == 0) { @for (meal of AllMeals; track meal.idMeal){
-        <div class="card col-sm-12 col-md-3 position-relative">
-          <div
-            routerLink="/product/{{ categoryName }}/{{ meal.id }}"
-            class="h-100"
-          >
-            <div id="circle1">
-              <img src="{{ meal.imageUrl }}" alt="meal Image" />
-            </div>
-            <div id="square">
-              <div id="details">
-                <div>
-                  <div>
-                    <a>
-                      {{ meal.name }}
-                    </a>
-                  </div>
-                  <div id="price">{{ meal.price }} EGP</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- <div id="icon-holder" (click)="getValue(meal)">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div> -->
-          @if(isAuthenticated) {
-          <div id="icon-holder" (click)="passToAddTocart(meal)">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          }@else{
-          <div id="icon-holder" routerLink="/register">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div>
-          }
-        </div>
-        } } @else { @for (product of products; track product.id){
-        <div class="card col-sm-12 col-md-3 position-relative">
+        @for (product of products; track product.id){
+        <div
+          class="card col-sm-12 col-md-6 col-lg-4 col-xl-3 position-relative"
+        >
           <div
             routerLink="/product/{{ categoryName }}/{{ product.id }}"
             class="h-100"
@@ -87,21 +57,24 @@
               <div id="details">
                 <div>
                   <div>
-                    <a> {{ product.name }} </a>
+                    <a> {{ product.name }}</a>
                   </div>
                   <div id="price">{{ product.price }} EGP</div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- <div id="icon-holder" (click)="getValue(product)">
-            <i class="fa-solid fa-cart-shopping"></i>
-          </div> -->
+          @if(isAuthenticated) {
           <div id="icon-holder" (click)="passToAddTocart(product)">
             <i class="fa-solid fa-cart-shopping"></i>
           </div>
+          }@else{
+          <div id="icon-holder" routerLink="/register">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          }
         </div>
-        } }
+        }
       </div>
     </div>
   </div>

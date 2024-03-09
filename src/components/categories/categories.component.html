@@ -2,7 +2,7 @@
   <div id="container" class="container-fluid">
     <div class="row justify-content-center">
       @for (category of AllCategries; track category.id){ @if(category) {
-      <div class="card position-relative col-sm-12 col-md-3">
+      <div class="card position-relative col-sm-12 col-md-4 col-lg-3">
         <a
           routerLink="/productlist/{{ category.name }}"
           class="d-flex justify-content-center"
@@ -19,9 +19,5 @@
       </div>
       } }
     </div>
-
-    <!-- remove it -->
-    <div class="text-light">{{ cartItems }}</div>
-    <!--  -->
   </div>
 </section>
