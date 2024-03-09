@@ -12,7 +12,6 @@ import { ProductsService } from '../../services/products.service';
   styleUrl: './categories.component.scss',
 })
 export class CategoriesComponent implements OnInit {
-  cartItems: any[] = [];
   constructor(private PService: ProductsService) {}
   AllCategries: any;
   ngOnInit(): void {
