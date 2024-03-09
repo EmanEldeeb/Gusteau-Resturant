@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
     'Breakfast',
   ];
   targetMeals: any[] = [];
+  activesearch: boolean = false;
 
   constructor(
     private _AuthService: AuthService,
@@ -65,6 +66,7 @@ export class NavbarComponent implements OnInit {
     for (let i = 0; i < this.allcategory.length; i++) {
       this._ProductsService.getCategoryByName(this.allcategory[i]).subscribe({
         next: (res: any) => {
+          console.log(this.allMeals);
           this.allMeals = [...this.allMeals, ...res];
         },
       });
@@ -72,8 +74,12 @@ export class NavbarComponent implements OnInit {
   }
 
   search() {
+    this.activesearch = false;
     this.targetMeals = this.allMeals.filter((meal) =>
       meal.name.toLowerCase().startsWith(this.searchInput.toLowerCase())
     );
+  }
+  close() {
+    this.activesearch = !this.activesearch;
   }
 }

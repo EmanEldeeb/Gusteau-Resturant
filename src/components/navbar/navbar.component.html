@@ -84,16 +84,24 @@
 </nav>
 @if(searchInput && targetMeals.length>0){
  
-  <div class="search-result">
-    <div class="row">
+  <div class="search-result" [class.hide]="activesearch">
+    <div class="row" >
+<div class="text-end"  (click)="close()">      <i class="fa-solid fa-xmark  close text-end fs-5 close-btn"  role="button" ></i></div>
       @for (meal of targetMeals; track meal.name) {
-        <div class="col-md-4">
-        <div>{{meal.name}}</div>
+      
+        <div class="col-md-4" >
+        <div  role="button"  routerLink="/product/{{ meal.category }}/{{ meal.id }}" (click)="close()">{{meal.name}}</div>
+       
         </div>
       }
+  
   
     </div>
   </div>
 }@else if(searchInput && targetMeals.length==0){
-  <h1>not found</h1>
+  <div class="search-result" [class.hide]="activesearch">
+    <div class="text-end" (click)="close()"  > <i class="fa-solid fa-xmark   fs-5  close-btn"  role="button" ></i></div>
+    <p  class="fs-5 text-center ">NOT FOUND</p>
+  </div>
+ 
 }
