@@ -34,9 +34,10 @@ export class ProductListComponent implements OnInit {
     this.PService.getCategoryByName(this.categoryName).subscribe({
       next: (data) => {
         this.AllMeals = data;
+        this.products = this.AllMeals;
       },
       error: (error) => {
-        throw error;
+        throw new Error(error);
       },
     });
     // change addtocart status

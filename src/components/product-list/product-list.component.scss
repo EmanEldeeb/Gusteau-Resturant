@@ -3,49 +3,67 @@
 }
 a {
   text-decoration: none;
-  color: white;
+  color: #c9ab81;
+  font-size: 18px;
   cursor: pointer;
 }
 #container {
   min-height: 100vh;
   background-color: #0b1315;
-  padding: 50px;
-  color: white;
+  padding: 30px;
+  color: #c9ab81;
   font-family: "DM Serif Display";
-
-  // background-image: url("../../assets/Asset_1.webp");
 }
 h2 {
   padding: 20px;
 }
+#filter {
+  margin-top: 20px;
+}
+#priceFilter {
+  margin: 20px 0 40px;
+  box-shadow: 0 0 1px 1px #c9ab81;
+  text-align: center;
+  padding: 5px 0;
+}
+#priceFilter h4 {
+  padding: 10px;
+  margin: 0;
+}
+#priceFilter input {
+  padding: 2px;
+  margin: 3px;
+  width: 150px;
+}
 .card {
   height: 200px;
   background-color: transparent;
-  padding: 0;
+  padding: 0 20px;
   border: none;
-  margin: 50px 20px;
+  margin: 50px 0;
 }
 #square {
   font-weight: bold;
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  color: white;
+  color: #c9ab81;
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: end;
   padding: 20px;
-  background-color: #212024;
+  background-color: #222125;
 }
 #details {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 200px;
 }
 #circle1 {
   position: absolute;
-  margin-top: -50px;
-  margin-left: 20px;
+  margin-top: -60px;
+  margin-left: -5px;
   border-radius: 50%;
 }
 img {
@@ -59,4 +77,20 @@ img {
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  color: #eee;
+}
+@media screen and (max-width: 768px) {
+  #circle1 {
+    margin-top: -50px;
+    margin-left: 70px;
+  }
+  a {
+    font-size: 16px;
+  }
+  #price {
+    font-size: 16px;
+  }
 }
