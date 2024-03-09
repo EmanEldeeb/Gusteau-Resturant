@@ -164,7 +164,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './product-details.component.scss',
 })
 export class ProductDetailsComponent implements OnInit {
-  ID = number;
+  ID : number;
   category: string;
   mealDetails: any;
   ingradiants: string[] = [];
