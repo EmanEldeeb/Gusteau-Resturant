@@ -1,6 +1,8 @@
 nav {
   background-color: #0b1315 !important;
   box-shadow: 0px -1px 6px 0px black;
+  position: relative;
+  z-index: 1000;
   * {
     color: #c9ab81;
   }
@@ -41,4 +43,10 @@ input.search {
     height: 0.7px;
     background-color: transparent;
   }
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
 }

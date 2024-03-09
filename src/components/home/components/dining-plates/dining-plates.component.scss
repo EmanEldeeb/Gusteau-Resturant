@@ -1,13 +1,7 @@
 section {
   position: relative;
   z-index: 3;
-}
-.img-holder {
-  height: 20rem;
-  overflow: hidden;
-}
-.img-holder img {
-  max-width: 100%;
+  margin-bottom: 2rem;
 }
 .meals-holder {
   display: flex;
@@ -48,4 +42,20 @@ section {
 span {
   font-weight: bold;
   color: var(--color-secondary);
+}
+.overlay-holder {
+  position: relative;
+  background-image: url("../../../../assets/images/Rectangle\ 37.svg");
+  height: 20rem;
+  overflow: hidden;
+}
+.img-holder .dining-fetch-image {
+  position: absolute;
+  z-index: -1;
+  width: 70%;
+}
+@media (max-width: 1201px) {
+  .img-holder .dining-fetch-image {
+    width: 100%;
+  }
 }

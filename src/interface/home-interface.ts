@@ -4,4 +4,5 @@ export interface HomeInterface {
   ingradients: [];
   imageUrl: string;
   price: number;
+  category: string;
 }

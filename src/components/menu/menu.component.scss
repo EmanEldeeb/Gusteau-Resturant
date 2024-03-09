@@ -1,0 +1,245 @@
+// ================== Start main Titel Section ==================
+
+.menue-title {
+  display: flex;
+  justify-content: center;
+}
+.menue-title h1 {
+  font-family: var(--second-font);
+}
+
+.menue-title .shapes {
+  margin: 0;
+  position: relative;
+  top: 3px;
+}
+
+.menue-title .shapes .shape-l {
+  display: block;
+  width: 22px;
+  border: 1px solid #c9ab81;
+  position: relative;
+}
+
+.menue-title .shapes .shape1,
+.menue-title .shapes .shape2 {
+  top: 22px;
+  right: 7px;
+}
+
+.menue-title .shapes .shape1,
+.menue-title .shapes .shape3,
+.menue-title .shapes .shape5,
+.menue-title .shapes .shape7 {
+  transform: rotate(30deg);
+}
+
+.menue-title .shapes .shape2,
+.menue-title .shapes .shape4,
+.menue-title .shapes .shape6,
+.menue-title .shapes .shape8 {
+  transform: rotate(-30deg);
+}
+
+.menue-title .shapes .shape3,
+.menue-title .shapes .shape4 {
+  top: 19px;
+  right: 30px;
+}
+
+.menue-title .shapes .shape5,
+.menue-title .shapes .shape6 {
+  top: 22px;
+  left: 7px;
+}
+
+.menue-title .shapes .shape7,
+.menue-title .shapes .shape8 {
+  top: 19px;
+  left: 30px;
+}
+//================== End main Titel Section ==================
+
+//================== Start main menu Section ==================
+
+.content {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.category {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.content .title {
+  width: 30%;
+  margin: 0;
+}
+
+.content .title h3 {
+  width: 100%;
+}
+
+.line-content {
+  width: 55%;
+}
+
+.line {
+  margin: 0;
+  display: block;
+  margin-left: 3px;
+  width: 100%;
+  height: 6px;
+  border: 1px solid var(--secondary-color);
+  border-left: none;
+  border-right: none;
+}
+
+.price-content {
+  width: 15%;
+}
+
+.price {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+}
+
+.image-container.cont1 {
+  justify-content: flex-end;
+}
+.image-container.cont2 {
+  justify-content: flex-start;
+}
+
+.image-container .image-back {
+  position: relative;
+  opacity: 60%;
+}
+
+.image-container .image-back.back1 {
+  width: 350px;
+  height: 220px;
+}
+
+.image-container .image-back.back2 {
+  width: 250px;
+  height: 250px;
+}
+
+.image-container .image-back.back3 {
+  position: relative;
+  top: 200px;
+  width: 400px;
+  height: 300px;
+}
+
+.image-container .image-back.back4 {
+  width: 250px;
+  height: 250px;
+}
+.image-container .image-back.back5 {
+  width: 450px;
+  height: 250px;
+  transform: rotate(-90deg);
+  left: 100px;
+  top: 100px;
+}
+.image-container .image-back.back6 {
+  width: 250px;
+  height: 250px;
+}
+.image-container .image-back.back7 {
+  top: 0px;
+  right: 75px;
+  width: 250px;
+  height: 400px;
+  transform: rotate(90deg);
+}
+.image-container .image-back.back8 {
+  width: 400px;
+  height: 250px;
+}
+// ----------------------------------------------------
+.image-container .image-top {
+  position: absolute;
+  top: 50px;
+}
+
+.image-container .image-top.top1 {
+  right: 50px;
+  width: 400px;
+  height: 250px;
+}
+.image-container .image-top.top2 {
+  left: 50px;
+  width: 300px;
+  height: 450px;
+}
+.image-container .image-top.top3 {
+  top: 100px;
+  right: 50px;
+  width: 280px;
+  height: 450px;
+}
+.image-container .image-top.top4 {
+  left: 50px;
+  width: 400px;
+  height: 250px;
+}
+.image-container .image-top.top5 {
+  right: 50px;
+  width: 250px;
+  height: 450px;
+}
+.image-container .image-top.top6 {
+  left: 50px;
+  width: 300px;
+  height: 500px;
+}
+
+.image-container .image-top.top7 {
+  right: 10px;
+  width: 400px;
+  height: 250px;
+}
+
+.image-container .image-top.top8 {
+  left: 70px;
+  width: 350px;
+  height: 250px;
+}
+
+.image-container .image-top > img {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--secondary-color);
+}
+//================== End main menu Section ==================
+
+// ===================================================
+
+@media (max-width: 992px) {
+  .media {
+    display: none;
+  }
+
+  .content .title {
+    width: 30%;
+  }
+
+  .line-content {
+    width: 50%;
+  }
+
+  .price-content {
+    width: 20%;
+  }
+}

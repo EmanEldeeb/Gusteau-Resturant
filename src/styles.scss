@@ -22,12 +22,18 @@ $identity-color: #c9ab81;
   --font-tertiary: "Great Vibes", cursive;
   --main-transition: all 0.2s 0.1s linear;
   --section-margin: 3rem;
+  --main-font: "M PLUS Rounded 1c";
+  --second-font: "DM Serif Display";
+  --third-font: "Great Vibes";
+  --primary-color: #0b1315;
+  --secondary-color: #c9ab81;
 }
 html {
   scroll-behavior: smooth;
 }
 body {
   background-color: $main-background;
+  color: $identity-color;
 }
 
 ::placeholder {
@@ -105,6 +111,7 @@ section {
   background-color: #c39556;
 }
 .btn-primary {
+  height: 40px;
   position: relative;
   font-family: var(--font-primary);
   background-color: var(--color-primary);

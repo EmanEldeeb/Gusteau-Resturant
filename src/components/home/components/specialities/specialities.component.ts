@@ -14,16 +14,32 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class SpecialitiesComponent {
   ourSpecialities: HomeInterface[] = [];
+
   constructor(private _ProductsService: ProductsService) {}
   ngOnInit(): void {
     this._ProductsService.getCategoryByName('Seafood').subscribe({
-      next: (data) => this.ourSpecialities.push(Object.values(data)[1]),
+      next: (data) => {
+        this.ourSpecialities.push({
+          ...Object.values(data)[5],
+          category: 'Seafood',
+        });
+      },
     });
     this._ProductsService.getCategoryByName('Seafood').subscribe({
-      next: (data) => this.ourSpecialities.push(Object.values(data)[2]),
+      next: (data) => {
+        this.ourSpecialities.push({
+          ...Object.values(data)[2],
+          category: 'Seafood',
+        });
+      },
     });
     this._ProductsService.getCategoryByName('Chicken').subscribe({
-      next: (data) => this.ourSpecialities.push(Object.values(data)[1]),
+      next: (data) => {
+        this.ourSpecialities.push({
+          ...Object.values(data)[1],
+          category: 'Chicken',
+        });
+      },
     });
   }
 }

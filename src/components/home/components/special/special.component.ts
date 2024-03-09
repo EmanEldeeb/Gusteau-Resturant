@@ -16,13 +16,19 @@ export class SpecialComponent {
   constructor(private _ProductsService: ProductsService) {}
   ngOnInit(): void {
     this._ProductsService.getCategoryByName('Beef').subscribe({
-      next: (data) => this.meals.push(Object.values(data)[0]),
+      next: (data) => {
+        this.meals.push({ ...Object.values(data)[0], category: 'Beef' });
+      },
     });
     this._ProductsService.getCategoryByName('Seafood').subscribe({
-      next: (data) => this.meals.push(Object.values(data)[0]),
+      next: (data) => {
+        this.meals.push({ ...Object.values(data)[0], category: 'Seafood' });
+      },
     });
     this._ProductsService.getCategoryByName('Chicken').subscribe({
-      next: (data) => this.meals.push(Object.values(data)[0]),
+      next: (data) => {
+        this.meals.push({ ...Object.values(data)[0], category: 'Chicken' });
+      },
     });
   }
 }

@@ -15,12 +15,12 @@
       <div
         *ngFor="let special of ourSpecialities"
         class="d-flex our-specialities-holder flex-column row flex-md-row"
+        routerLink="/product/{{ special.category }}/{{ special.id }}"
       >
         <div class="img-holder position-relative col-12 col-lg-7 mb-3">
-          <div class="overlay-holder position-absolute">
-            <img src="assets/images/Rectangle 37.svg" alt="" />
+          <div class="overlay-holder position-relative">
+            <img class="dining-fetch-image" [src]="special.imageUrl" alt="" />
           </div>
-          <img [src]="special.imageUrl" alt="" />
         </div>
         <div class="sec-text-holder text-center text-lg-start col-lg-4">
           <h4>{{ special.name }}</h4>
