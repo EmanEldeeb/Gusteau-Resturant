@@ -1,13 +1,10 @@
 #container {
-  /* min-height: 100vh; */
-  font-family: "DM Serif Display";
-  background-color: #0b1315;
   font-size: 18px;
   padding: 50px;
   position: relative;
   z-index: 1;
   background-image: url("../../assets/images/Asset\ 1\ 1.svg");
-  background-size: 600px;
+  background-size: 400px;
 }
 a {
   cursor: pointer;
@@ -18,7 +15,6 @@ a {
   padding: 0;
   margin: 50px 30px;
   padding: 20px;
-  // background-image: linear-gradient(to top, #212024 40%, transparent 90%);
   border: none;
 }
 #square {
@@ -31,30 +27,29 @@ a {
   justify-content: center;
   align-items: end;
   padding: 20px;
-  background-image: linear-gradient(to top, #212024 60%, transparent 90%);
+  background-image: linear-gradient(to top, #c9ab81 -200%, transparent 90%);
 }
 .circle2 {
   position: absolute;
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
   margin-top: -60px;
   border-radius: 50%;
-  background-image: linear-gradient(to bottom, #212024 20px, #0b1315 70%);
+  background-image: linear-gradient(to bottom, #c9ab81 -100%, #0b1315 46%);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: transparent; */
-  // border: 8px solid;
-  // rotate: 45deg;
-  // border-color: #212024 transparent transparent #212024;
-  //   color: black;
+  padding: 0;
+  z-index: -1;
 }
 #circle1 {
-  // width: 90px;
-  // height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background-color: transparent;
-  // border: 5px solid #0b1315;
+  border: 7px solid;
+  background-color: #0b1315;
+  border-color: #0b1315 transparent transparent #0b1315;
+  rotate: 45deg;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,6 +58,7 @@ img {
   width: 85px;
   height: 85px;
   border-radius: 50%;
+  rotate: -45deg;
 }
 a {
   text-decoration: none;
