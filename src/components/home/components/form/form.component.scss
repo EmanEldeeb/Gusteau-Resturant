@@ -102,8 +102,9 @@ textarea {
   color: var(--color-secondary);
 }
 svg {
+  margin: 0 0.5rem;
   color: var(--color-secondary);
-  font-size: 1.4rem !important;
+  font-size: 1rem !important;
 }
 .footer {
   color: var(--color-secondary);
@@ -157,8 +158,27 @@ svg {
   margin-top: 70px;
   font-size: 18px;
 }
+@media (max-width: 480px) {
+  .all-social-holder {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}
 .social-holder {
   text-transform: uppercase;
   font-family: var(--font-secondary);
   border-bottom: 2px solid var(--color-secondary);
+}
+a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  opacity: 1;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+a:hover {
+  opacity: 0.5;
 }

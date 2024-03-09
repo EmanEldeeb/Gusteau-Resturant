@@ -1,22 +1,8 @@
 section {
   position: relative;
   z-index: 3;
+  margin-bottom: 2rem;
 }
-.img-holder {
-  position: relative;
-  height: 20rem;
-  overflow: hidden;
-}
-// @media (max-width: 992px) {
-//   .img-holder {
-//     left: 50%;
-//     transform: translateX(-50%);
-//     -webkit-transform: translateX(-50%);
-//     -moz-transform: translateX(-50%);
-//     -ms-transform: translateX(-50%);
-//     -o-transform: translateX(-50%);
-//   }
-// }
 .meals-holder {
   display: flex;
   flex-wrap: wrap;
@@ -29,9 +15,7 @@ section {
   width: 100%;
   height: 100%;
 }
-.dining-image img {
-  background-size: 700px;
-}
+
 .meals-holder .our-specialities-holder {
   width: 100%;
   cursor: pointer;
@@ -59,6 +43,19 @@ span {
   font-weight: bold;
   color: var(--color-secondary);
 }
-.dining-fetch-image {
-  min-width: 70%;
+.overlay-holder {
+  position: relative;
+  background-image: url("../../../../assets/images/Rectangle\ 37.svg");
+  height: 20rem;
+  overflow: hidden;
+}
+.img-holder .dining-fetch-image {
+  position: absolute;
+  z-index: -1;
+  width: 70%;
+}
+@media (max-width: 1201px) {
+  .img-holder .dining-fetch-image {
+    width: 100%;
+  }
 }

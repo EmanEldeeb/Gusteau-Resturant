@@ -2,10 +2,7 @@ section {
   position: relative;
   z-index: 3;
 }
-.img-holder {
-  height: 20rem;
-  overflow: hidden;
-}
+
 .specialities-image-holder img {
   width: 100%;
 }
@@ -43,6 +40,20 @@ section {
 .sec-text-holder :nth-child(2) {
   font-family: var(--font-primary);
 }
-.speical-fetch-img {
-  min-width: 70%;
+
+.overlay-holder {
+  position: relative;
+  background-image: url("../../../../assets/images/Rectangle\ 37.svg");
+  height: 20rem;
+  overflow: hidden;
+}
+.img-holder .speical-fetch-img {
+  position: absolute;
+  z-index: -1;
+  width: 70%;
+}
+@media (max-width: 1201px) {
+  .img-holder .speical-fetch-img {
+    width: 100%;
+  }
 }

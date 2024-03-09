@@ -18,7 +18,7 @@ section {
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
 }
-@media (max-width: 992px) {
+@media (max-width: 480px) {
   .btn-primary {
     left: 50%;
     transform: translateX(-50%);

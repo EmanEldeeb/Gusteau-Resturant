@@ -1,1 +1,379 @@
-<p>menu works!</p>
+<!-- ================================================================== -->
+<div class="parent">
+  <!-- Start page Content -->
+  <div class="container">
+    <!-- Start main title -->
+    <div class="row" style="margin-top: 20px">
+      <div class="col-sm-12">
+        <div class="menue-title">
+          <!-- left shapes -->
+          <div class="shapes">
+            <span class="shape1 shape-l"></span>
+            <span class="shape2 shape-l"></span>
+            <span class="shape3 shape-l"></span>
+            <span class="shape4 shape-l"></span>
+          </div>
+          <h1>Main Menu</h1>
+          <!-- right shapes -->
+          <div class="shapes">
+            <span class="shape5 shape-l"></span>
+            <span class="shape6 shape-l"></span>
+            <span class="shape7 shape-l"></span>
+            <span class="shape8 shape-l"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End main title -->
+
+    <!-- ====================== Start main menu sections ====================== -->
+
+    <!--Start Section 1 -->
+
+    <!-- menu -->
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Beef</div>
+        <div *ngFor="let item1 of beefArrData.slice(0, 5)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ============================ -->
+      <!-- images -->
+      <div class="col-lg-6 image-container cont1 media">
+        <img
+          class="image-back back1"
+          src="../../assets/images/patternShap2.png"
+          alt=""
+        />
+        <div class="image-top top1">
+          <img src="../../assets/images/beef5.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!--End Section 1 -->
+
+    <!-- ------------------ -->
+    <!--Start Section 2 -->
+
+    <!-- images -->
+    <div class="row mt-5">
+      <div class="col-lg-6 image-container cont2 media">
+        <img
+          class="image-back back2"
+          src="../../assets/images/patternShap3.png"
+          alt=""
+        />
+        <div class="image-top top2">
+          <img src="../../assets/images/chicken1.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+
+      <!-- menu -->
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Chicken</div>
+        <div *ngFor="let item1 of chickenArrData.slice(0, 8)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Section 2 -->
+
+    <!--Start Section 3 -->
+
+    <!-- menu -->
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Lamb</div>
+        <div *ngFor="let item1 of lambArrData.slice(0, 10)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ============================ -->
+      <!-- images -->
+      <div class="col-lg-6 image-container cont1 media">
+        <img
+          class="image-back back3"
+          src="../../assets/images/patternShap4.png"
+          alt=""
+        />
+        <div class="image-top top3">
+          <img src="../../assets/images/lamb1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!--End Section 3 -->
+
+    <!--Start Section 4 -->
+
+    <!-- images -->
+    <div class="row mt-5">
+      <div class="col-lg-6 image-container cont2 media">
+        <img
+          class="image-back back4"
+          src="../../assets/images/patternShap3.png"
+          alt=""
+        />
+        <div class="image-top top4">
+          <img src="../../assets/images/pasta2.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+
+      <!-- menu -->
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Pasta</div>
+        <div *ngFor="let item1 of pastaArrData.slice(0, 6)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Section 4 -->
+
+    <!--Start Section 5 -->
+
+    <!-- menu -->
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Breakfast</div>
+        <div *ngFor="let item1 of breakfastArrData.slice(0, 9)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ============================ -->
+      <!-- images -->
+      <div class="col-lg-6 image-container cont1 media">
+        <img
+          class="image-back back5"
+          src="../../assets/images/patternShap2.png"
+          alt=""
+        />
+        <div class="image-top top5">
+          <img src="../../assets/images/breakfast1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!--End Section 5 -->
+
+    <!--Start Section 6 -->
+
+    <!-- images -->
+    <div class="row mt-5">
+      <div class="col-lg-6 image-container cont2 media">
+        <img
+          class="image-back back6"
+          src="../../assets/images/patternShap3.png"
+          alt=""
+        />
+        <div class="image-top top6">
+          <img src="../../assets/images/seafood1.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+
+      <!-- menu -->
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Seafood</div>
+        <div *ngFor="let item1 of seafoodArrData.slice(0, 10)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Section 6 -->
+
+    <!--Start Section 7 -->
+
+    <!-- menu -->
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Side</div>
+        <div *ngFor="let item1 of sideArrData.slice(0, 6)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- ============================ -->
+      <!-- images -->
+      <div class="col-lg-6 image-container cont1 media">
+        <img
+          class="image-back back7"
+          src="../../assets/images/patternShap4.png"
+          alt=""
+        />
+        <div class="image-top top7">
+          <img src="../../assets/images/side1.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <!--End Section 7 -->
+
+    <!--Start Section 8 -->
+
+    <!-- images -->
+    <div class="row mt-5">
+      <div class="col-lg-6 image-container cont2 media">
+        <img
+          class="image-back back8"
+          src="../../assets/images/patternShap5.png"
+          alt=""
+        />
+        <div class="image-top top8">
+          <img src="../../assets/images/dessert1.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- ===================================== -->
+
+      <!-- menu -->
+      <div class="col-lg-6">
+        <div class="category text-center mb-4">Dessert</div>
+        <div *ngFor="let item1 of dessertArrData.slice(0, 7)">
+          <div class="content">
+            <div class="title">
+              <h3 class="h6">{{ item1.name }}</h3>
+            </div>
+            <!-- --------------------- -->
+            <div class="line-content">
+              <span class="line"></span>
+            </div>
+            <!-- --------------------- -->
+            <div class="price-content">
+              <p class="price">{{ item1.price }}</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-light" style="font-size: 13px">
+              {{ item1.ingradients.slice(0, 7) }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Section 8 -->
+
+    <!-- ====================== End main menu sections   ====================== -->
+  </div>
+  <!-- End page Content -->
+</div>
