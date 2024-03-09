@@ -4,18 +4,19 @@ import { AuthService } from '../../services/auth.service';
 import { jwtDecode } from 'jwt-decode';
 import { ProductsService } from '../../services/products.service';
 import { SearchPipe } from '../../pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-navbar',
   standalone: true,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
   providers: [AuthService, ProductsService],
-  imports: [RouterModule, SearchPipe],
+  imports: [RouterModule, SearchPipe, FormsModule],
 })
 export class NavbarComponent implements OnInit {
   isAuthenticated!: boolean;
   userName: string = '';
-  searchInput: string = 'a';
+  searchInput: string = '';
   allMeals: any[] = [];
   allcategory: string[] = [
     'Beef',
@@ -27,7 +28,7 @@ export class NavbarComponent implements OnInit {
     'Dessert',
     'Breakfast',
   ];
-  targetMeals: {}[] = [];
+  targetMeals: any[] = [];
 
   constructor(
     private _AuthService: AuthService,
@@ -69,11 +70,10 @@ export class NavbarComponent implements OnInit {
       });
     }
   }
+
   search() {
-    this.allMeals.map((meal) => {
-      if (meal.name.startsWith(this.searchInput)) {
-        console.log('FrOm search', meal.name);
-      }
-    });
+    this.targetMeals = this.allMeals.filter((meal) =>
+      meal.name.toLowerCase().startsWith(this.searchInput.toLowerCase())
+    );
   }
 }
