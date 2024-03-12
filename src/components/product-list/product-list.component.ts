@@ -21,6 +21,7 @@ export class ProductListComponent implements OnInit {
   maxPrice = 500;
   products: any[] = [];
   isAuthenticated!: boolean;
+  isAdd: boolean = false;
 
   constructor(
     myActivated: ActivatedRoute,
@@ -58,5 +59,9 @@ export class ProductListComponent implements OnInit {
   //add to cart
   passToAddTocart(meal: any) {
     this._CartService.addTOCartFun(meal, 1);
+    this.isAdd = true;
+    setTimeout(() => {
+      this.isAdd = false;
+    }, 700);
   }
 }

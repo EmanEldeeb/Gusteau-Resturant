@@ -1,5 +1,12 @@
 <section>
   <div id="container" class="container-fluid">
+    @if(isAdd){
+    <div class="text-end position-relative">
+      <span class="cart-alert position-absolute top-0 end-0"
+        >added to cart</span
+      >
+    </div>
+    }
     <h2>{{ categoryName }}</h2>
     <div class="row justify-content-center">
       <div id="filter" class="row my-3">

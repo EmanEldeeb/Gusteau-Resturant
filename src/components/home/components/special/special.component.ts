@@ -17,17 +17,17 @@ export class SpecialComponent {
   ngOnInit(): void {
     this._ProductsService.getCategoryByName('Beef').subscribe({
       next: (data) => {
-        this.meals.push({ ...Object.values(data)[0], category: 'Beef' });
+        this.meals.push({ ...Object.values(data)[0] });
       },
     });
     this._ProductsService.getCategoryByName('Seafood').subscribe({
       next: (data) => {
-        this.meals.push({ ...Object.values(data)[0], category: 'Seafood' });
+        this.meals.push({ ...Object.values(data)[0] });
       },
     });
     this._ProductsService.getCategoryByName('Chicken').subscribe({
       next: (data) => {
-        this.meals.push({ ...Object.values(data)[0], category: 'Chicken' });
+        this.meals.push({ ...Object.values(data)[0] });
       },
     });
   }

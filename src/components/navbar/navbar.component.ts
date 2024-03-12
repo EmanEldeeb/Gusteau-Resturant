@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { jwtDecode } from 'jwt-decode';
 import { ProductsService } from '../../services/products.service';
 import { SearchPipe } from '../../pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
@@ -40,12 +39,7 @@ export class NavbarComponent implements OnInit {
     this._AuthService.isAuthenticated$.subscribe({
       next: (isAuthenticated) => {
         this.isAuthenticated = isAuthenticated;
-
-        const token = localStorage.getItem('_token') || '';
-        if (token != '') {
-          const decoded: any = jwtDecode(token);
-          this.userName = decoded.name;
-        }
+        this.userName = this._AuthService.getUserInfo()?.name;
       },
       error: (err) => {
         console.log(err);
@@ -78,6 +72,7 @@ export class NavbarComponent implements OnInit {
     );
   }
   close() {
+    this.searchInput = '';
     this.activesearch = !this.activesearch;
   }
 }

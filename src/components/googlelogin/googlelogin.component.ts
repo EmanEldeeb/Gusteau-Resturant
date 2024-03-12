@@ -60,7 +60,6 @@ export class GoogleloginComponent {
     google.accounts.id.renderButton(document.getElementById('google-btn'), {
       size: 'large',
       theme: 'outline',
-      type: 'icon',
     });
   }
   private decodeToken(token: string) {
@@ -80,13 +79,8 @@ export class GoogleloginComponent {
       this.loggedIn = user != null;
     });
   }
-  // facebook login
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  }
+
   onRegistrationSuccess(): void {
-    console.log('successs login');
-    // Notify the shared service that the user is authenticated
     this._AuthService.setAuthenticationStatus(true);
   }
 }

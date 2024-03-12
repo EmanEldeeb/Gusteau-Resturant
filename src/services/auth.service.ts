@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -43,5 +44,13 @@ export class AuthService {
 
   setAuthenticationStatus(isAuthenticated: boolean): void {
     AuthService.isAuthenticatedSubject.next(isAuthenticated);
+  }
+
+  getUserInfo() {
+    const token = localStorage.getItem('_token') || '';
+    if (token != '') {
+      const decoded: any = jwtDecode(token);
+      return decoded;
+    }
   }
 }

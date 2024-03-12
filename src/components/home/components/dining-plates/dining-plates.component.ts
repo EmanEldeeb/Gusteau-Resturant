@@ -19,21 +19,18 @@ export class DiningPlatesComponent {
       next: (data) =>
         this.ourSpecialities.push({
           ...Object.values(data)[3],
-          category: 'Seafood',
         }),
     });
     this._ProductsService.getCategoryByName('Seafood').subscribe({
       next: (data) =>
         this.ourSpecialities.push({
           ...Object.values(data)[5],
-          category: 'Seafood',
         }),
     });
     this._ProductsService.getCategoryByName('Chicken').subscribe({
       next: (data) =>
         this.ourSpecialities.push({
           ...Object.values(data)[6],
-          category: 'Chicken',
         }),
     });
   }

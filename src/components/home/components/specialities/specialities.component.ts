@@ -21,7 +21,6 @@ export class SpecialitiesComponent {
       next: (data) => {
         this.ourSpecialities.push({
           ...Object.values(data)[5],
-          category: 'Seafood',
         });
       },
     });
@@ -29,7 +28,6 @@ export class SpecialitiesComponent {
       next: (data) => {
         this.ourSpecialities.push({
           ...Object.values(data)[2],
-          category: 'Seafood',
         });
       },
     });
@@ -37,7 +35,6 @@ export class SpecialitiesComponent {
       next: (data) => {
         this.ourSpecialities.push({
           ...Object.values(data)[1],
-          category: 'Chicken',
         });
       },
     });
