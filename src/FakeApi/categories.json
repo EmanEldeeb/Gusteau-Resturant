@@ -1277,7 +1277,11 @@
       "name": "Bread omelette",
       "price": "140",
       "imageUrl": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg",
-      "ingradients": ["Bread", "Egg", "Salt"],
+      "ingradients": [
+        "Bread",
+        "Egg",
+        "Salt"
+      ],
       "category": "Breakfast",
       "area": "Indian"
     },
@@ -1358,7 +1362,12 @@
       "name": "Home-made Mandazi",
       "price": "210",
       "imageUrl": "https://www.themealdb.com/images/media/meals/thazgm1555350962.jpg",
-      "ingradients": ["Self-raising Flour", "Sugar", "Eggs", "Milk"],
+      "ingradients": [
+        "Self-raising Flour",
+        "Sugar",
+        "Eggs",
+        "Milk"
+      ],
       "category": "Breakfast",
       "area": "Kenyan"
     },
@@ -1442,6 +1451,24 @@
       "id": "1",
       "review": "h323kurh2iejie2j3io2jigjnv jdfnvjnejvjilejrilvjerijg",
       "name": "Beef",
+      "reviewer": "eman eldeeb"
+    },
+    {
+      "id": "1",
+      "review": "very good",
+      "name": "Seafood",
+      "reviewer": "eman eldeeb"
+    },
+    {
+      "id": "2",
+      "review": "verry good",
+      "name": "Lamb",
+      "reviewer": "eman eldeeb"
+    },
+    {
+      "id": "6",
+      "review": "not bad",
+      "name": "Seafood",
       "reviewer": "eman eldeeb"
     }
   ],
