@@ -22,4 +22,17 @@ export class ProductsService {
   getData(type: string): Observable<any> {
     return this.myClient.get(`http://localhost:3000/${type}`);
   }
+
+  postReview(
+    review: string,
+    name: string,
+    id: number,
+    reviewer: string
+  ): Observable<any> {
+    const reviewData = { review, id, name, reviewer };
+    return this.myClient.post(`http://localhost:3000/addReview`, reviewData);
+  }
+  getReview(): Observable<any> {
+    return this.myClient.get(`http://localhost:3000/addReview`);
+  }
 }

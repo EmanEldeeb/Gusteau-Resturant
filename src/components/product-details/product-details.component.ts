@@ -5,11 +5,12 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [HttpClientModule, RouterModule, FormsModule],
+  imports: [HttpClientModule, RouterModule, FormsModule, CommonModule],
   providers: [ProductsService, CartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
@@ -21,14 +22,16 @@ export class ProductDetailsComponent implements OnInit {
   ingradiants: string[] = [];
   arr: any;
   relatedDishes: any = [];
-  // cart
   quantityValue: number = 1;
   isAuthenticated!: boolean;
+  isAdd: boolean = false;
+  reviewInput: string = '';
+  reviewList: any[] = [];
+  userName: string = '';
 
   order: any;
   constructor(
     private _CartService: CartService,
-    private router: Router,
     private _AuthService: AuthService,
     private myActivated: ActivatedRoute,
     private PService: ProductsService
@@ -52,6 +55,20 @@ export class ProductDetailsComponent implements OnInit {
       this.category = this.myActivated.snapshot.params['category'];
 
       this.load();
+    });
+    // get reviews
+
+    this.getReviews();
+  }
+  getReviews() {
+    this.reviewList = [];
+    this.PService.getReview().subscribe({
+      next: (res) => {
+        this.reviewList = res.filter((review: any) => {
+          return review.name === this.category && review.id == this.ID;
+        });
+        console.log(this.reviewList);
+      },
     });
   }
   load() {
@@ -87,5 +104,25 @@ export class ProductDetailsComponent implements OnInit {
   passToAddTocart(meal: any) {
     this._CartService.addTOCartFun(meal, this.quantityValue);
     this.quantityValue = 1;
+    this.isAdd = true;
+    setTimeout(() => {
+      this.isAdd = false;
+    }, 700);
+  }
+  sharereview() {
+    this.userName = this._AuthService.getUserInfo()?.name;
+    if (this.reviewInput.length > 0) {
+      this.PService.postReview(
+        this.reviewInput,
+        this.category,
+        this.ID,
+        this.userName
+      ).subscribe({
+        next: (res) => {
+          this.getReviews();
+        },
+      });
+      this.reviewInput = '';
+    }
   }
 }

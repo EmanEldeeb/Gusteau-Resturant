@@ -1,6 +1,12 @@
 <section>
   <div id="container" class="container-fluid p-sm-0 p-md-5">
-    @if(mealDetails) {
+    @if(isAdd){
+    <div class="text-end position-relative">
+      <span class="cart-alert position-absolute top-0 end-0"
+        >added to cart</span
+      >
+    </div>
+    } @if(mealDetails) {
     <div class="row justify-content-center align-items-center" id="product">
       <div id="image-holder" class="col-sm-12 col-md-4">
         <img
@@ -23,14 +29,6 @@
             min="1"
             [(ngModel)]="quantityValue"
           />
-          <!-- <button id="cartBtn" (click)="getValue(myInput.value, mealDetails)">
-            <span>ADD TO CART </span>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button> -->
-          <!-- <button id="cartBtn" (click)="addTOCart()">
-            <span>ADD TO CART </span>
-            <i class="fa-solid fa-cart-shopping"></i>
-          </button> -->
           @if(isAuthenticated){
           <button id="cartBtn" (click)="passToAddTocart(mealDetails)">
             <div role="button">
@@ -50,11 +48,10 @@
       </div>
     </div>
     }
-    <!-- Start main title -->
+
     <div class="row" style="margin-top: 20px">
       <div class="col-sm-12">
         <div class="menue-title">
-          <!-- left shapes -->
           <div class="shapes">
             <span class="shape1 shape-l"></span>
             <span class="shape2 shape-l"></span>
@@ -62,7 +59,7 @@
             <span class="shape4 shape-l"></span>
           </div>
           <h1>Related Dishes</h1>
-          <!-- right shapes -->
+
           <div class="shapes">
             <span class="shape5 shape-l"></span>
             <span class="shape6 shape-l"></span>
@@ -72,7 +69,7 @@
         </div>
       </div>
     </div>
-    <!-- End main title -->
+
     <div class="row justify-content-between" id="dishes-sec">
       @for(dish of relatedDishes; track relatedDishes.id) {
       <a
@@ -89,6 +86,51 @@
         </div>
       </a>
       }
+    </div>
+  </div>
+  <h4 class="text-center h1 my-4">Customer Experience</h4>
+  <div class="reviews">
+    <form action="">
+      <div
+        class="d-flex justify-content-center px-3 align-items-center flex-column"
+      >
+        <textarea
+          name="review"
+          placeholder="Share your thoughts on your dining experience! Write a review and let us know how we can make your next meal even better."
+          class="form-input text-center"
+          [(ngModel)]="reviewInput"
+        ></textarea>
+        <div class="text-center">
+          @if(isAuthenticated){
+          <button class="main-btn my-4 px-5 h6" (click)="sharereview()">
+            Share</button
+          >} @else{
+          <button class="main-btn my-4 px-5 h6" routerLink="/login">
+            Share
+          </button>
+          }
+        </div>
+      </div>
+    </form>
+
+    <div class="show-review">
+      <div class="container-fluid my-4">
+        @for (review of reviewList; track review.id){
+
+        <div class="row my-3 w-75 mx-auto">
+          <div class="review col-sm-12">
+            <div class="row">
+              <div class="col-md-2 py-4 text-center reviewer">
+                {{ review.reviewer }}
+              </div>
+              <div class="col-md-10 py-4">
+                <div>{{ review.review }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
     </div>
   </div>
 </section>
