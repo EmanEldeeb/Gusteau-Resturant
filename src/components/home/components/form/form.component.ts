@@ -18,9 +18,9 @@ export class FormComponent {
     emailjs
       .sendForm(
         'Gusteau',
-        'template_ulcdaka',
+        'template_21ob6uu',
         e.target as HTMLFormElement,
-        'DLlzsFjJ4IwEBKM__'
+        'YWNSBgVw9nUJlPh3I'
       )
       .then(
         (result: EmailJSResponseStatus) => {},
