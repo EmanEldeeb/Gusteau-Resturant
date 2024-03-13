@@ -6,11 +6,18 @@ import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { LayerComponent } from '../layer/layer.component';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [HttpClientModule, RouterModule, FormsModule, CommonModule],
+  imports: [
+    HttpClientModule,
+    RouterModule,
+    FormsModule,
+    CommonModule,
+    LayerComponent,
+  ],
   providers: [ProductsService, CartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',

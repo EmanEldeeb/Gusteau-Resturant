@@ -5,11 +5,12 @@ import { ProductsService } from '../../services/products.service';
 import { FormsModule } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
+import { LayerComponent } from '../layer/layer.component';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [HttpClientModule, RouterModule, FormsModule],
+  imports: [HttpClientModule, RouterModule, FormsModule, LayerComponent],
   providers: [ProductsService, CartService],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',

@@ -1,4 +1,7 @@
 <section>
+  @if(!AllMeals){
+  <app-layer></app-layer>
+  }@else{
   <div id="container" class="container-fluid">
     @if(isAdd){
     <div class="text-end position-relative">
@@ -85,4 +88,5 @@
       </div>
     </div>
   </div>
+  }
 </section>

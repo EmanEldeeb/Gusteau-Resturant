@@ -1,4 +1,8 @@
 <section>
+  @if(!mealDetails){
+  <app-layer></app-layer>
+  } @else{
+
   <div id="container" class="container-fluid p-sm-0 p-md-5">
     @if(isAdd){
     <div class="text-end position-relative">
@@ -133,4 +137,5 @@
       </div>
     </div>
   </div>
+  }
 </section>

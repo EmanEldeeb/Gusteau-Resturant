@@ -1,4 +1,7 @@
-<section>
+<section class="position-relative">
+  @if(!AllCategries){
+  <app-layer></app-layer>
+  } @else{
   <div id="container" class="container-fluid">
     <div class="row justify-content-center">
       @for (category of AllCategries; track category.id){ @if(category) {
@@ -20,4 +23,5 @@
       } }
     </div>
   </div>
+  }
 </section>
