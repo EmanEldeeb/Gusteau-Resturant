@@ -33,7 +33,13 @@ export class ProductsService {
     id: number,
     reviewer: string
   ): Observable<any> {
-    const reviewData = { review, id, name, reviewer };
+    const reviewData = {
+      id: Date.now(),
+      review,
+      itemId: id,
+      name,
+      reviewer,
+    };
     return this.myClient.post(
       `https://gusteau-resturant-server-1.onrender.com/addReview`,
       reviewData

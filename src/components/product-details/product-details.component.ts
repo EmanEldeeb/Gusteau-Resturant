@@ -65,7 +65,7 @@ export class ProductDetailsComponent implements OnInit {
     this.PService.getReview().subscribe({
       next: (res) => {
         this.reviewList = res.filter((review: any) => {
-          return review.name === this.category && review.id == this.ID;
+          return review.name === this.category && review.itemId == this.ID;
         });
         console.log(this.reviewList);
       },
